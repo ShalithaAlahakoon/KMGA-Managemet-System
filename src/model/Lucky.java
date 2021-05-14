@@ -1,17 +1,10 @@
 package model;
 
-public class Test {
-	
+public class Lucky {
+
 	public static void main(String[] args) {
-		
-	
-	if{
-		
-	}
-	else {
-		
-	}
-	
+		// TODO Auto-generated method stub
+
 	}
 
 }
