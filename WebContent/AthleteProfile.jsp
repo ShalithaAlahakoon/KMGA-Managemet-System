@@ -119,6 +119,7 @@
 			</form>
 			</td>
 		</tr>
+		
 		</table>
 	</div>
 	<br>
@@ -212,7 +213,7 @@
 		<tr>
 			<td> ${progress.evaluation}</td>
 			<td> ${progress.marks}</td>
-			<td> ${progress.eveId}></td>
+			<td> ${progress.eveId}</td>
 			<td> ${progress.athId}</td>
 			
 			
@@ -259,8 +260,15 @@
 						<input type="hidden" value= "${athlete.NIC}" name="nic">
 					</form>
 			</td>
-			<td width="150%"><button onclick="printAtheleteList()" class="btn btn-primary">GENARATE  REPORT</button></td>
 			
+			<td width="150%"> 
+			
+				<form action="athleteReport" method="post" target="_blank">
+						<input type="submit" value="GENARATE REPORT" class="btn btn-primary">
+						<input type="hidden" value= "${athlete.athleteID}" name="id">
+						
+					</form>
+			</td>
 			
 			<td >
 

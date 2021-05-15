@@ -62,6 +62,16 @@
     	<url-pattern>/updateAthlete2</url-pattern>
     </servlet-mapping>
     
+     <servlet>
+    	<servlet-name>athleteReport</servlet-name>
+    	<servlet-class>controller.AthleteReportServelet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>athleteReport</servlet-name>
+    	<url-pattern>/athleteReport</url-pattern>
+    </servlet-mapping>
+    
+    
     <servlet>
     	<servlet-name>addAchivement</servlet-name>
     	<servlet-class>controller.AddAchivementServelet</servlet-class>

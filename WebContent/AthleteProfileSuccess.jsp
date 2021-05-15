@@ -201,15 +201,6 @@
 	<table >
 		<tr>
 			
-			<td >
-
-			
-			
-							 <form action="deleteAthlete" method="post">
-								<input type="submit" value="DELETE PROFILE" class="btn btn-primary" >
-								<input type="hidden" value= "${athlete.athleteID}" name="id">
-							</form> 
-			</td>
 			
 			<td>
 					<form action="updateAthlete" method="post">
@@ -225,7 +216,25 @@
 						<input type="hidden" value= "${athlete.NIC}" name="nic">
 					</form>
 			</td>
-			<td><button onclick="printAtheleteList()" class="btn btn-primary">GENARATE  REPORT</button></td>
+			
+			<td width="150%"> 
+			
+				<form action="athleteReport" method="post" target="_blank">
+						<input type="submit" value="GENARATE REPORT" class="btn btn-primary">
+						<input type="hidden" value= "${athlete.athleteID}" name="id">
+						
+					</form>
+			</td>
+			
+			<td >
+
+			
+			
+							 <form action="deleteAthlete" method="post">
+								<input type="submit" value="DELETE PROFILE" class="btn btn-danger" >
+								<input type="hidden" value= "${athlete.athleteID}" name="id">
+							</form> 
+			</td>
 		</tr>
 	</table>
 	
