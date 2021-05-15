@@ -7,6 +7,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.Score;
 import model.Achivement;
 import model.Athlete;
 import model.AthleteEvent;
@@ -369,6 +370,37 @@ ArrayList<schedule> Schedule = new ArrayList<>();
 	}
 	
 	return Schedule;	
+}
+
+public static List<Score> getAthleteProgressById(String id) {
+	
+	ArrayList<Score> score = new ArrayList<>();
+try {
+		
+		con = DBConnect.getConnection();
+		stmt = con.createStatement();
+		String sql = "select * from kmga.progress where AthleteID = '"+id+"'";
+		rs = stmt.executeQuery(sql);
+		
+		while (rs.next()) {
+			String progressID = rs.getString(1);
+			String evaluation = rs.getString(2);
+			float scores = rs.getFloat(3);
+			String eventID = rs.getString(4);
+			String elementID = rs.getString(5);
+			String athleteID= rs.getString(6);
+			
+			Score obj = new Score(progressID, evaluation, scores,eventID,elementID,athleteID);
+			score.add(obj);
+			
+			
+		}
+		
+	} catch (Exception e) {
+		
+	}
+	
+	return score;	
 }
 
 

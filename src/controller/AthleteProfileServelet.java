@@ -14,6 +14,7 @@ import DBUtill.AthleteDBUtill;
 import model.Achivement;
 import model.Athlete;
 import model.AthleteEvent;
+import model.Score;
 import model.schedule;
 
 
@@ -45,6 +46,9 @@ public class AthleteProfileServelet extends HttpServlet {
 		List<schedule> ScheduleDetails = AthleteDBUtill.getAthleteScheduleById(id);
 		request.setAttribute("ScheduleDetails", ScheduleDetails);
 		
+		//GETTING TRAINING PROGRESS
+		List<Score> ProgressDetails = AthleteDBUtill.getAthleteProgressById(id);
+		request.setAttribute("ProgressDetails", ProgressDetails);
 		
 		RequestDispatcher dis = request.getRequestDispatcher("AthleteProfile.jsp");
 		dis.forward(request, response);
