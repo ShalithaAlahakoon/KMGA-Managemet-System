@@ -33,15 +33,23 @@
 			</div>
 			<div class="row">
 				<div class="col">Event Name </div>
-				<div class="col"><input type="text" name="eventName" value="<%= EventName %>"></div>
+				<div class="col"><input type="text" name="eventName" value="<%= EventName %>" required></div>
 			</div>
 			<div class="row">
 				<div class="col">Event Symbol </div>
-				<div class="col"><input type="text" name="eventSymbol" value="<%= EventSymbol %>"></div>
+				<div class="col"><input type="text" name="eventSymbol" value="<%= EventSymbol %>" required></div>
 			</div>
 			<div class="row">
 				<div class="col">Category </div>
-				<div class="col"><input type="text" name="category" value="<%= Category %>"></div>
+				<div class="col">
+					<select id="mapletter" name="category" required>
+							<option value='A'><%= Category %></option>
+							<option value='FEMALE'>FEMALE</option>
+							<option value='MALE'>MALE</option>
+							<option value='BOTH'>BOTH</option>
+					</select>
+						
+				</div>
 			</div>
 			
 			<input type="submit" name="submit" value="Update Event" class="btn btn-success">

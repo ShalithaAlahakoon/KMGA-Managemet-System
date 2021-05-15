@@ -126,6 +126,15 @@
   	<url-pattern>/insert</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  	<servlet-name>AssinElement</servlet-name>
+  	<servlet-class>controller.AssinElementServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>AssinElement</servlet-name>
+  	<url-pattern>/assinEl</url-pattern>
+  </servlet-mapping>
+  
     <servlet>
   	<servlet-name>InsertElement</servlet-name>
   	<servlet-class>controller.ElementInsertServlet</servlet-class>
