@@ -2,8 +2,7 @@ package model;
 
 public class Hansika {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	public void hansika() {
 
 	}
 
