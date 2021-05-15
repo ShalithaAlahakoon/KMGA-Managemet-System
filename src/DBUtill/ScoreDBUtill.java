@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.Score;
+import model.rankProgress;
 
 
 public class ScoreDBUtill {
@@ -21,7 +22,7 @@ public class ScoreDBUtill {
 				 
 				 Connection connect = DBConnect.getConnection();
 				 Statement stmt = connect.createStatement();
-				 String sql = "insert into kmga.progress values ('"+ProgressID+"','"+Evalution+"','"+Score+"','"+EventID+"','"+ElemetID+"','"+AthleteID+"' )";
+				 String sql = "insert into kmgadb.progress values ('"+ProgressID+"','"+Evalution+"','"+Score+"','"+EventID+"','"+ElemetID+"','"+AthleteID+"' )";
 				 int res = stmt.executeUpdate(sql);
 				 
 				 if(res>0) {
@@ -45,7 +46,7 @@ public class ScoreDBUtill {
 					
 					 Connection connect = DBConnect.getConnection();
 					 Statement stmt = connect.createStatement();
-					 String sql = "select * from kmga.progress where ProgressID = '"+progressId+"'";
+					 String sql = "select * from kmgadb.progress where ProgressID = '"+progressId+"'";
 					 ResultSet rs = stmt.executeQuery(sql);
 					
 					
@@ -81,7 +82,7 @@ public class ScoreDBUtill {
 					 
 					 Connection connect = DBConnect.getConnection();
 					 Statement stmt = connect.createStatement();
-					 String sql = "update kmga.progress set ProgressID ='"+ProgressID+"', Evalution='"+Evalution+"', Score='"+Score+"', EventID='"+EventID+"',ElemetID='"+ElemetID+"',AthleteID ='"+AthleteID+"' where ProgressID='"+ProgressID+"'";
+					 String sql = "update kmgadb.progress set ProgressID ='"+ProgressID+"', Evalution='"+Evalution+"', Score='"+Score+"', EventID='"+EventID+"',ElemetID='"+ElemetID+"',AthleteID ='"+AthleteID+"' where ProgressID='"+ProgressID+"'";
 					 int res = stmt.executeUpdate(sql);
 					
 					 if(res>0) {
@@ -106,7 +107,7 @@ public class ScoreDBUtill {
 					 
 					 Connection connect = DBConnect.getConnection();
 					 Statement stmt = connect.createStatement();
-					 String sql = "delete from kmga.progress where ProgressID = '"+name+"'";
+					 String sql = "delete from kmgadb.progress where ProgressID = '"+name+"'";
 					 int resul = stmt.executeUpdate(sql);
 					 
 					 if(resul>0) {
@@ -132,7 +133,7 @@ public class ScoreDBUtill {
 					
 					 Connection connect = DBConnect.getConnection();
 					 Statement stmt = connect.createStatement();
-					 String sql = "select * from kmga.progress";
+					 String sql = "select * from kmgadb.progress";
 					 ResultSet rs = stmt.executeQuery(sql);
 					
 					
@@ -155,6 +156,36 @@ public class ScoreDBUtill {
 				}
 				
 				return Sco;
+			}
+			
+			//display Rank
+			public static List <rankProgress> getRank(){
+				
+				ArrayList< rankProgress> rank = new ArrayList<>();
+				
+				try {
+					
+					 Connection connect = DBConnect.getConnection();
+					 Statement stmt = connect.createStatement();
+					 String sql = "select AthleteID, avg(Score) from kmgadb.progress group by AthleteID order by score desc ";
+					 ResultSet rs = stmt.executeQuery(sql);
+					
+					
+					 while(rs.next()) {
+	
+						 String athId = rs.getString(1);
+						 float total = rs.getFloat(2);
+						
+						 rankProgress r1 = new rankProgress(athId, total);
+						 rank.add(r1);
+						
+					}
+				}
+				catch(Exception e){
+					e.printStackTrace();
+				}
+				
+				return rank;
 			}
 
 }
