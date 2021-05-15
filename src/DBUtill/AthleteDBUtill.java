@@ -10,6 +10,7 @@ import java.util.List;
 import model.Achivement;
 import model.Athlete;
 import model.AthleteEvent;
+import model.schedule;
 
 public class AthleteDBUtill {
 	
@@ -341,6 +342,33 @@ ArrayList<Achivement> achivements = new ArrayList<>();
 	}
 	
 	return achivements;	
+}
+
+public static List<schedule> getAthleteScheduleById(String id) {
+	
+ArrayList<schedule> Schedule = new ArrayList<>();
+	
+	try {
+		
+		con = DBConnect.getConnection();
+		stmt = con.createStatement();
+		String sql = "select scheduleID from kmga.athlete_schedule where AthleteID = '"+id+"'";
+		rs = stmt.executeQuery(sql);
+		
+		while (rs.next()) {
+			String scheduleID = rs.getString(1);
+			
+			schedule obj = new schedule(scheduleID);
+			Schedule.add(obj);
+			
+			
+		}
+		
+	} catch (Exception e) {
+		
+	}
+	
+	return Schedule;	
 }
 
 

@@ -160,9 +160,44 @@
 	
 	
 	
-	<!-- training  card -->
+	<!-- TRAINING SCHEDULE  card -->
 	<div class = "card">
 		<h5 class="card-title">TRAINING SCHEDULE</h5>
+		<table  class="table table-striped ">
+		<tr>
+			<th>SCHEDULE ID</th>
+			
+			
+		</tr>
+		
+		<c:forEach var="sd" items="${ScheduleDetails}">
+		<tr>
+			<td> ${sd.idschedule}</td>
+			
+			
+		</tr>
+		</c:forEach>
+		<!-- add events button -->
+		<tr>
+			<td>
+			<form action="AddScheduleToAthlete" method="post">
+				<input type="submit" value="ADD SCHEDULE" class="btn btn-primary">
+				<c:forEach var="athlete" items="${athleteDetails}">
+				<input type="hidden" value= "${athlete.athleteID}" name="id">
+				</c:forEach>
+			</form>
+			</td>
+		</tr>
+		</table>
+		
+		
+	</div>
+	
+	<!-- training  card -->
+	<div class = "card">
+		<h5 class="card-title">next card</h5>
+		
+		
 	</div>
 	</div>
 	

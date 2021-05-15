@@ -90,6 +90,24 @@
     </servlet-mapping>
     
     <servlet>
+    	<servlet-name>AddScheduleToAthlete</servlet-name>
+    	<servlet-class>controller.AddScheduleToAthleteServelet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>AddScheduleToAthlete</servlet-name>
+    	<url-pattern>/AddScheduleToAthlete</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+    	<servlet-name>SaveScheduleToAthlete</servlet-name>
+    	<servlet-class>controller.SaveScheduleToAtheletServelet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>SaveScheduleToAthlete</servlet-name>
+    	<url-pattern>/SaveScheduleToAthlete</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
     	<servlet-name>SaveEventToAthlete</servlet-name>
     	<servlet-class>controller.SaveEventToAthleteServelet</servlet-class>
     </servlet>
