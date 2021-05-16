@@ -4,6 +4,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    <%@page import="java.util.Date"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +21,7 @@
 <div id = "list">
 	<h4>COMPETITION DETAILS</h4>
 <br>
-	
+	<p>Date & Time:<%=new Date().toString()%></p>
 		<div class="row">
 		
 		

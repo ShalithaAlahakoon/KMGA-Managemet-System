@@ -63,6 +63,19 @@
 	<input type="button" name="update" value="UPDATE" class="btn btn-success">
 	</a> 
 	
+	
+	<c:url value="CompetitionDelete.jsp" var="cmpdelete">
+		<c:param name="cmpId" value="${cmpId}"/>
+		<c:param name="cmpName" value="${cmpName}"/>
+		<c:param name="date" value="${date}"/>
+		<c:param name="time" value="${time}"/>
+		<c:param name="venue" value="${venue}"/>
+		
+	</c:url>
+	<a href ="${cmpdelete}">
+	<input type="button" name="delete" value="DELETE" class="btn btn-success">
+	</a>
+	
 	</div>
 	</div>
 	

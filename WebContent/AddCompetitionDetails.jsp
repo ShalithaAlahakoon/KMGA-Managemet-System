@@ -26,11 +26,11 @@
 
 			<div class="row">
 				<div class="col">Competition ID: </div>
-				<div class="col"><input type = "text" name = "cmpId"></div>
+				<div class="col"><input type = "text" name = "cmpId" required></div>
 			</div>
 			<div class="row">
 				<div class="col">Competition Name:	</div>
-				<div class="col"><input type = "text" name = "cmpName"></div>
+				<div class="col"><input type = "text" name = "cmpName"  required></div>
 			</div>
 		   <div class="row"> 
 		   		<div class="col">Date :		</div>
@@ -47,10 +47,14 @@
 		   		 
 		    <input type = "submit" name = "submit" value = "SAVE" class="btn btn-success">
 		    
+		
+		
+		    
 		</div>
 		
 		<div class="col-sm-3"></div>
 		
+	
     
 		
 	</form>
