@@ -23,14 +23,16 @@
 	
 	
 	<div id="printArea">
-		<h4>Monthly Training Progress Report</h4>	<br> <br>
+	    <center>
+		<h1>Monthly Training Progress Report</h1>
+		<h4>Date and time : <%=new Date().toString() %> </h4>	<br> <br>
 		
 				<table style="width:50%" class="table table-striped">
 			
 			    <tr>					
 						<th>Rank</th>
 						<th>Athlete ID</th>
-						<th>Total Score</th>
+						<th>Average Score</th>
 					
 				<%
 					List <rankProgress> rank = ScoreDBUtill.getRank();
@@ -92,7 +94,7 @@
 			
 	</div>
 	<div align="center"><button onclick="printEventList()" class="button btn-lg"><span>Download Report</span></button></div>
-	<a href="main.jsp"><button type ="submit" class="button btn-lg"><span>Back</span></button></a>
+	<a href="ProgressHome.jsp"><button type ="submit" class="button btn-lg"><span>Back</span></button></a>
 	
 		<script >
 			function printEventList(){
