@@ -62,7 +62,7 @@
 				</div>
 				
 				<div class="col-sm" align="center">
-					<a href="AttendanceCommonLayout.jsp"><img alt="" src="images/Attendance.png" width="100px" height="100px"></a>
+					<a href="GetAttendance.jsp"><img alt="" src="images/Attendance.png" width="100px" height="100px"></a>
 					<p>ATTENDANCE <br>MANAGEMENT</p>
 				</div>
 			</div>
