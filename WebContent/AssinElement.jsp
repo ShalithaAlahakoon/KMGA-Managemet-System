@@ -23,20 +23,23 @@
 	<form action="assinEl" method ="post">
 	
 	<div class="row">
+	
 		
 			<div class="col">
 			
-					Event ID<input type ="text" name="EventId"> 		
+					Event ID
+					<br><input type ="text" name="EventId">	
 			</div>
 			
 			<div class="col">
 				
-					Element ID<input type ="text" name="ElementId"> 			
+					Element ID
+					<br><input type ="text" name="ElementId"> 			
 			</div>
 			
 			<div class = "col">
-				
-				<input type="submit" name="submit" value="Assign Elemant" class="btn btn-success">
+				<br>
+				<input type="submit" name="submit" value="Assign" class="btn btn-success">
 			</div>			
 		</div>
 		</form>
