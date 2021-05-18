@@ -18,10 +18,14 @@
 
 	<div class = "main">
 	
-	<h4>GENERATE ATHLETE'S TRAINING SCHEDULE REPORT</h4>
+	
 	<div id="printArea">
 			
 <table class="table table-striped">
+
+<h4>GENERATE ATHLETE'S TRAINING SCHEDULE REPORT</h4> 
+<hr>
+<br>
 		
 				<tr>
 					

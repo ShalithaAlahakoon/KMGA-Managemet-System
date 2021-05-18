@@ -10,7 +10,7 @@
 <jsp:include page="TSCommonLayout.jsp"></jsp:include>
 	
 	<div class='main'>
-	<h1>Unsuccess</h1>
+	
 	
 	</div>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
