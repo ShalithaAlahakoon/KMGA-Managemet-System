@@ -26,6 +26,9 @@
 				
 		
 					<table>
+					
+					<table class = "table table-striped">
+					
 					<tr>
 					
 						<th>CompetitionID</th>
@@ -62,7 +65,7 @@
 					%>
 					</table>
 					 
-					 <button><a href = "GenarateCmpReport.jsp" class="btn btn-success" >Download Report</a></button>
+					
 				
 				
 

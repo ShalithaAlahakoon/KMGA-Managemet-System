@@ -10,6 +10,7 @@
 <jsp:include page="/CompettionCommonLayout.jsp"></jsp:include>
 <div class="main">
 <div align="center">
+<h4>DELETE COMPETITION DETAILS</h4><br><br><br>
 
 <%
 	String cmpId = request.getParameter("cmpId");

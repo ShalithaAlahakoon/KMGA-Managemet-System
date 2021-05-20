@@ -29,6 +29,7 @@
 				
 		
 					<table>
+					<table class = "table table-striped">
 					<tr>
 					
 						<th>CompetitionID</th>

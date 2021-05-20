@@ -14,9 +14,12 @@
 	
 <div class="main">
 <div align = "center">
-<h4>COMPETITION DETAILS</h4>
+<h4>COMPETITION DETAILS</h4><br><br>
 
 	<table>
+	<table class = "table table-striped">
+					
+	
 	<c:forEach var="cmp" items="${competitionDetails}">
 	
 	<c:set var="cmpId" value="${cmp.cmpId}"/>

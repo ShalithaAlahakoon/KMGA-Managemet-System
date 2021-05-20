@@ -11,6 +11,8 @@
 <div class="main">
 <div align="center">
 
+<h4>UPDATE COMPETITION DETAILS</h4><br><br><br>
+
 <%
 	String cmpId = request.getParameter("cmpId");
 	String cmpName = request.getParameter("cmpName");
@@ -20,7 +22,8 @@
 %>
 
 <form action="updateComp" method ="post">
-	
+
+
 		<div class="col-sm-3"></div>
 
 		<div class="col-sm-6">
