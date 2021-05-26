@@ -24,7 +24,7 @@
 			<form action="addLocation" method="post" class="locationForm">
 				<div class="row">
 					<div class="col">Location ID</div>
-					<div class="col"><input type='text' name='locID' ></div>
+					<div class="col"><input type='text' name='locID' required ></div>
 				</div>
 			
 				<div class="row">
