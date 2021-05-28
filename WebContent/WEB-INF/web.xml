@@ -62,6 +62,16 @@
     	<url-pattern>/updateAthlete2</url-pattern>
     </servlet-mapping>
     
+     <servlet>
+    	<servlet-name>athleteReport</servlet-name>
+    	<servlet-class>controller.AthleteReportServelet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>athleteReport</servlet-name>
+    	<url-pattern>/athleteReport</url-pattern>
+    </servlet-mapping>
+    
+    
     <servlet>
     	<servlet-name>addAchivement</servlet-name>
     	<servlet-class>controller.AddAchivementServelet</servlet-class>
@@ -87,6 +97,24 @@
     <servlet-mapping>
     	<servlet-name>addEvent</servlet-name>
     	<url-pattern>/addEvent</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+    	<servlet-name>AddScheduleToAthlete</servlet-name>
+    	<servlet-class>controller.AddScheduleToAthleteServelet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>AddScheduleToAthlete</servlet-name>
+    	<url-pattern>/AddScheduleToAthlete</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+    	<servlet-name>SaveScheduleToAthlete</servlet-name>
+    	<servlet-class>controller.SaveScheduleToAtheletServelet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>SaveScheduleToAthlete</servlet-name>
+    	<url-pattern>/SaveScheduleToAthlete</url-pattern>
     </servlet-mapping>
     
     <servlet>
