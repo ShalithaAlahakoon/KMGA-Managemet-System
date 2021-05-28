@@ -17,7 +17,7 @@ pageEncoding="ISO-8859-1"%>
 	<body>
 		<jsp:include page="/ProgressCommonLayout.jsp"></jsp:include>
 		<div class ="main">
-		    //heading
+		    //heading home
 			<h1>Add / Search Score Details</h1><br><br>
 			
 			<form action="viewmarks" method="post">
