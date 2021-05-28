@@ -29,9 +29,7 @@ public class SaveEventToAthleteServelet extends HttpServlet {
 		String eventID = request.getParameter("event");
 		String athleteID = request.getParameter("id");
 		
-		System.out.println("event id = "+eventID);
-		System.out.println("athlete id = "+athleteID);
-boolean isSuccess = false;
+		boolean isSuccess = false;
 		
 		try {
 			Connection con = DBConnect.getConnection();

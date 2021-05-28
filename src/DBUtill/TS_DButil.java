@@ -1,9 +1,14 @@
 package DBUtill;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
+
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+
+import model.schedule;
 
 public class TS_DButil {
 	
@@ -25,7 +30,7 @@ public class TS_DButil {
 			System.out.println("TS_DBUTill.java idschedule= "+idschedule);
 			con = DBConnect.getConnection();
 			stmt = con.createStatement();
-    	    String sql = "insert into sampath_schedule values('"+idschedule+"','"+athleteId+"','"+date+"','"+day+"','"+time+"','"+description+"')";
+    	    String sql = "insert into schedule values('"+idschedule+"','"+athleteId+"','"+date+"','"+day+"','"+time+"','"+description+"')";
     		int rs = stmt.executeUpdate(sql);
     		
     		if(rs>0) {
@@ -53,7 +58,7 @@ public class TS_DButil {
 			
 			con = DBConnect.getConnection();
 			stmt = con.createStatement();
-			String sql = "update sampath_schedule set idschedule ='"+idschedule+"', athleteId='"+athleteId+"', date='"+date+"', day='"+day+"',time='"+time+"',description ='"+description+"' where athleteId='"+athleteId+"'";
+			String sql = "update schedule set idschedule ='"+idschedule+"', athleteId='"+athleteId+"', date='"+date+"', day='"+day+"',time='"+time+"',description ='"+description+"' where athleteId='"+athleteId+"'";
     	    int rs = stmt.executeUpdate(sql);
     	    
     		if(rs>0) {
@@ -80,7 +85,7 @@ public class TS_DButil {
 			
 			con = DBConnect.getConnection();
 			stmt = con.createStatement();
-			String sql ="delete from sampath_schedule where idschedule='"+idschedule+"'";
+			String sql ="delete from schedule where idschedule='"+idschedule+"'";
 			int rs = stmt.executeUpdate(sql);
 		
     		if(rs>0) {
@@ -96,6 +101,33 @@ public class TS_DButil {
 		}
 		
 		return isSuccess;
+	}
+
+	public static List<schedule> getSchedules() {
+		List<schedule> Schedule = new ArrayList<>();
+		
+		try {
+			
+			con = DBConnect.getConnection();
+			stmt = con.createStatement();
+			String sql = "select * from kmga.schedule ";
+			rs = stmt.executeQuery(sql);
+			
+			while (rs.next()) {
+				String scheduleID = rs.getString(1);
+				System.out.println(scheduleID);
+				
+				schedule obj = new schedule(scheduleID);
+				Schedule.add(obj);
+			}
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+			}
+		
+		
+		
+		return Schedule;	
 	}
 	
 }

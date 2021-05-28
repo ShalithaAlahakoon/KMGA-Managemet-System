@@ -103,6 +103,8 @@
 <jsp:include page="/AttendanceCommonLayout.jsp"></jsp:include>
 <body>
 <div class = "main">
+<h4>Today Attendance Details</h4>
+<br>
 
 
 <table class="content-table">

@@ -16,7 +16,7 @@
 	<jsp:include page="/LECommonLayout.jsp"></jsp:include>
 
 	<div class="main">
-		<h4>VIEW LOCATIONS</h4>
+		<h4>LOCATIONS</h4>
 		
 	
 		<br>
@@ -32,7 +32,6 @@
 					<table class="table table-striped">
 					<tr>
 					
-						<th>Location ID</th>
 						<th>Map Letter</th>
 						<th>Description</th>
 						<th>View</th>
@@ -45,7 +44,6 @@
 					%>
 					
 					<tr>
-						<td><%=loc.getLocID() %></td>
 						<td><%=loc.getMapLetter() %></td>
 						<td><%=loc.getLocDescription() %></td>
 

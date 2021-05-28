@@ -16,28 +16,28 @@
 			<table>
 			<tr>
 			   <td> <label for="idschedule">Enter Schedule Id:</label> </td>
-			   <td> <input type ="text" name="idschedule" placeholder="Enter Schedule Id"><br></td>
+			   <td> <input type ="text" name="idschedule" placeholder="Enter Schedule Id" required><br></td>
 			</tr>
 			<tr>
 				<td><label for="athleteId">athleteId:</label> </td>
-				<td><input type ="text" name="athleteId" placeholder="M/F0000"><br></td>
+				<td><input type ="text" name="athleteId" placeholder="M/F0000" required><br></td>
 			</tr>
 			<tr>
 				<td><label for="date">Date:</label></td>
-				<td><input type ="date" name="date" placeholder="0000-00-00"><br></td>
+				<td><input type ="date" name="date" placeholder="0000-00-00" required><br></td>
 			</tr>
 			<tr>
 				<td><label for="day">Day:</label> </td>
-				<td><input type ="text" name="day" placeholder="Name of day"><br></td>
+				<td><input type ="text" name="day" placeholder="Name of day" required><br></td>
 			</tr>
 			<tr>
 				<td><label for="time">Time Duration:</label></td> 
-				<td><input type ="text" name="time" placeholder="00:00 - 00:00"><br></td>
+				<td><input type ="text" name="time" placeholder="00:00 - 00:00" required><br></td>
 				
 			</tr>
 			<tr>
 				<td><label for="description">Description:</label></td> 
-				<td><input type="text" name="description" placeholder="Type here..." ><br></td>
+				<td><input type="text" name="description" placeholder="Type here..."  required><br></td>
 			</tr>	
 				
 			

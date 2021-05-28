@@ -5,7 +5,7 @@ import java.util.List;
 
 import model.Element;
 import model.Event;
-
+import model.EventElement;
 
 import java.sql.Connection;
 
@@ -119,6 +119,32 @@ public class EventDBUtill {
 		return isSuccess;
 	}
 
+	//assin eventelement
+	public static boolean assinelement(String eventId, String elementId) {
+
+		boolean isSuccess = false;
+
+			try {
+	
+				con = DBConnect.getConnection();
+				stmt = con.createStatement();
+	
+				String sql = "insert into event_element values ('"+eventId+"','"+elementId+"')";
+				int rs = stmt.executeUpdate(sql);
+				
+				if(rs > 0) {
+					isSuccess = true;
+				}else {
+					isSuccess = false;
+				}		
+			}
+			catch(Exception e) {
+		
+				e.printStackTrace();
+			}
+	
+			return isSuccess;
+	}
 
 	//insert element
 	public static boolean insertelement(String elementId, String elementName, String value,String eventId) {
@@ -239,6 +265,34 @@ public class EventDBUtill {
 			
 			return evnt;
 		}
+		
+		//display All EventElement
+				public static List<EventElement> getEventElement (){
+					
+					ArrayList<EventElement> evntel = new ArrayList<>();
+					
+					try {
+						
+						con = DBConnect.getConnection();
+						stmt = con.createStatement();
+						String sql = "select * from event_element";
+						rs = stmt.executeQuery(sql);
+						
+						while(rs.next()) {
+							String eventId = rs.getString(1);
+							String elmntId = rs.getString(2);
+
+							EventElement evl = new EventElement(eventId,elmntId);
+							evntel.add(evl);
+							
+						}
+					}
+					catch(Exception e){
+						e.printStackTrace();
+					}
+					
+					return evntel;
+				}
 		
 		//display all elements
 			public static List<Element> getElement(){

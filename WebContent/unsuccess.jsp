@@ -11,8 +11,18 @@
 <jsp:include page="/CompettionCommonLayout.jsp"></jsp:include>
 	
 <div class="main">
+<br>
+<br>
+				<div  align="center">
+					<img alt="" src="images/errorE.png" width="100px" height="100px">
+				</div>
+<br>
+
+<h4>PLEASE INSERT VALID VALUE</h4>
+
 
 <h4>Unsuccess. Please add valid details!!!</h4>
+
 
 </div>
 

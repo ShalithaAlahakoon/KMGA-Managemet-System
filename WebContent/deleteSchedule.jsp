@@ -27,12 +27,33 @@
 	<h1>DELETE SCHEDULE</h1>
 	
 	<form action="delete" method="post">
-		Schedule ID<input type="text" name="idschedule" value="<%=idschedule %>" readonly><br>
-		Athlete ID<input type ="text" name="athleteId" value="<%=athleteId %>" readonly><br>
-		Date<input type ="text" name="date" value="<%=date %>" readonly><br>
-		Day<input type ="text" name="day" value="<%=day %>" readonly><br>
-		time<input type ="text" name="time" value="<%=time %>" readonly><br>
-		Description<input type ="text" name="description" value="<%=description %>" readonly><br>
+		<table>
+			<tr>
+				<td> <lable for ="idschedule">Schedule ID</lable></td>
+				<td><input type="text" name="idschedule" value="<%=idschedule %>" readonly><br> </td>
+			</tr>
+			<tr>
+				<td> <lable for ="athleteId"></lable>Athlete ID</td>
+				<td> <input type ="text" name="athleteId" value="<%=athleteId %>" readonly><br> </td>
+			</tr>
+			<tr>
+				<td> <lable for ="date"></lable>Date </td>
+				<td> <input type ="text" name="date" value="<%=date %>" readonly><br> </td>
+			</tr>
+			<tr>
+				<td> <lable for ="day"></lable>Day</td>
+				<td> <input type ="text" name="day" value="<%=day %>" readonly><br> </td>
+			</tr>
+			<tr>
+				<td> <lable for ="time"></lable>Time</td>
+				<td> <input type ="text" name="time" value="<%=time %>" readonly><br> </td>
+			</tr>
+			<tr>
+				<td> <lable for ="description"></lable>Description</td>
+				<td> <input type ="text" name="description" value="<%=description %>" readonly><br> </td>
+			</tr>
+		
+		</table>
 		
 		<input type="submit" class="btn btn-primary btn-sm" name="submit" value="Delete Schedule"><br>
 		

@@ -177,7 +177,7 @@
 		    		<input  type="text" name="id" placeholder="Enter ID" >
 		    </div>
 		    <div class="user-box">
-		    		<input  type="date" name="date" placeholder="Date/Month/Year" >
+		    		<input  type="date" name="date" placeholder="day/month/year" >
 		    </div>
 		    <div class="user-box">
 		    		<input  type="time" name="inTime" placeholder="In-Time" >
@@ -186,7 +186,7 @@
 		    		<input  type="time" name="outTime" placeholder="Out-Time" >
 		    </div>
 		    <div>
-		    		<input type="submit" name="submit" value="ENTER" class="btn btn-success" >
+		    		<input type="submit" name="submit" value="ENTER" class="btn btn-success" style="margin-left:35%">
 		    </div>
 		    
 		 </form>

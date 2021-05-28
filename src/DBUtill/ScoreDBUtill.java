@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.Score;
+import model.rankProgress;
 
 
 public class ScoreDBUtill {
@@ -155,6 +156,36 @@ public class ScoreDBUtill {
 				}
 				
 				return Sco;
+			}
+			
+			//display Rank
+			public static List <rankProgress> getRank(){
+				
+				ArrayList< rankProgress> rank = new ArrayList<>();
+				
+				try {
+					
+					 Connection connect = DBConnect.getConnection();
+					 Statement stmt = connect.createStatement();
+					 String sql = "select AthleteID, avg(Score) from kmga.progress group by AthleteID order by score desc ";
+					 ResultSet rs = stmt.executeQuery(sql);
+					
+					
+					 while(rs.next()) {
+	
+						 String athId = rs.getString(1);
+						 float total = rs.getFloat(2);
+						
+						 rankProgress r1 = new rankProgress(athId, total);
+						 rank.add(r1);
+						
+					}
+				}
+				catch(Exception e){
+					e.printStackTrace();
+				}
+				
+				return rank;
 			}
 
 }

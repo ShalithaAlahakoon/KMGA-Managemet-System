@@ -59,6 +59,7 @@
 	  <a href="InsertEvent.jsp">ADD NEW EVENT</a>
 	  <a href="InsertElement.jsp">ADD NEW ELEMENT</a>
 	  <a href="EventHome.jsp">VIEW EVENTS</a>
+	  <a href="AssinElement.jsp"> ASSIGN ELEMENT</a>
 	  <a href="GenerateEventReport.jsp">GENERATE REPORT</a>
 	  <a href="adminPage.jsp">ADMIN PAGE</a>
 	</div>
