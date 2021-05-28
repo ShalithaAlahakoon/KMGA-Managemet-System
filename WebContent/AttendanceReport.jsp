@@ -102,8 +102,11 @@
 </style>
 <body>
 <div class = "main">
+
 			
 		<div id="printArea">
+		<h4>Today Attendance Details</h4>
+<br>
 				<table class="content-table">
 			<thead>
 				<tr>
