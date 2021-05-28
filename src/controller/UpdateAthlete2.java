@@ -11,7 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import DBUtill.AthleteDBUtill;
+import model.Achivement;
 import model.Athlete;
+import model.AthleteEvent;
+import model.Score;
+import model.schedule;
 
 
 @WebServlet("/UpdateAthlete2")
@@ -32,6 +36,26 @@ public class UpdateAthlete2 extends HttpServlet {
 		String nic = request.getParameter("nic");
 		String psd = request.getParameter("psw");
 		
+
+		List<Athlete> athleteDetails1 = AthleteDBUtill.getAthleteById(id);
+		request.setAttribute("athleteDetails", athleteDetails1);
+		
+	
+		//getting achievements
+		List<Achivement> achivementsDetails = AthleteDBUtill.getAthleteAchivementById(id);
+		request.setAttribute("achivementsDetails", achivementsDetails);
+		
+		//getting events
+		List<AthleteEvent> aeDetails = AthleteDBUtill.getAthleteEventById(id);
+		request.setAttribute("aeDetails", aeDetails);
+		
+		//GETTING SCHEDULES
+		List<schedule> ScheduleDetails = AthleteDBUtill.getAthleteScheduleById(id);
+		request.setAttribute("ScheduleDetails", ScheduleDetails);
+		
+		//GETTING TRAINING PROGRESS
+		List<Score> ProgressDetails = AthleteDBUtill.getAthleteProgressById(id);
+		request.setAttribute("ProgressDetails", ProgressDetails);
 		
 		boolean isTrue;
 		
@@ -41,7 +65,8 @@ public class UpdateAthlete2 extends HttpServlet {
 			System.out.println("succecss fully Updated");
 			List<Athlete> athleteDetails = AthleteDBUtill.getAthleteById(id);
 			request.setAttribute("athleteDetails", athleteDetails);
-			RequestDispatcher dis = request.getRequestDispatcher("AthleteProfile.jsp");
+			request.setAttribute("athleteID", id);
+			RequestDispatcher dis = request.getRequestDispatcher("AthleteProfileSuccess.jsp");
 			dis.forward(request, response);
 		} else {
 			System.out.println("failed");

@@ -5,16 +5,16 @@ public class Finance {
 	private String transactionId;
 	private String date;
 	private String description;
-	private String amount;
+	private Double amounts;
 	private String type;
-	private String balance;
+	private Double balance;
 	
-	public Finance(String transactionId, String date, String description, String amount, String type, String balance) {
+	public Finance(String transactionId, String date, String description, Double amounts, String type, Double balance) {
 		
 		this.transactionId = transactionId;
 		this.date = date;
 		this.description = description;
-		this.amount = amount;
+		this.amounts = amounts;
 		this.type = type;
 		this.balance = balance;
 	}
@@ -34,8 +34,8 @@ public class Finance {
 	}
 
 	
-	public String getAmount() {
-		return amount;
+	public Double getAmounts() {
+		return amounts;
 	}
 
 	
@@ -44,7 +44,7 @@ public class Finance {
 	}
 
 	
-	public String getBalance() {
+	public Double getBalance() {
 		return balance;
 	}
 

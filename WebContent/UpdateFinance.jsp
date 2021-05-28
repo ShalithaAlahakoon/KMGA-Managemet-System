@@ -18,7 +18,7 @@
 	String transactionId = request.getParameter("transactionId");
 	String date = request.getParameter("date");
 	String description = request.getParameter("description");
-	String amount = request.getParameter("amount");
+	String amounts = request.getParameter("amounts");
 	String type = request.getParameter("type");
 	String balance = request.getParameter("balance");
 	
@@ -45,7 +45,7 @@
 	
 	<tr>
 	<td>Amount</td>
-	<td><input type="text" name="amount" value="<%= amount %>"><br></td>
+	<td><input type="text" name="amounts" value="<%= amounts %>"><br></td>
 	</tr>
 	
 	<tr>
@@ -54,7 +54,7 @@
 				<option value="capital"><%= type %></option>
 			    <option value="capital">capital</option>
 			    <option value="income">income</option>
-			    <option value="expense">expenses</option>
+			    <option value="expenses">expenses</option>
 			
 			  </select></td>
 	</tr>

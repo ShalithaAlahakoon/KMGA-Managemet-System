@@ -90,7 +90,7 @@
 	<div class="row">
 	
 		<div class="col">
-				<div align="center"><button onclick="printEventList()" class="btn btn-info">Download Event Report</button></div>
+				<div align="center"><button onclick="printEventList()" class="btn btn-info">Event Report</button></div>
 		
 				<script >
 					function printEventList(){
@@ -112,7 +112,7 @@
 		</div>
 		<div class="col">
 	
-			<div align="center"><button onclick="printAlleventList()" class="btn btn-info">Download Report</button></div>
+			<div align="center"><button onclick="printAlleventList()" class="btn btn-info">General Report</button></div>
 			
 				<script >
 					function printAlleventList(){
@@ -131,7 +131,7 @@
 				</script>
 			</div>	
 			<div class="col">
-			<div align="center"><button onclick="printElementList()" class="btn btn-info">Download Element Report</button></div>
+			<div align="center"><button onclick="printElementList()" class="btn btn-info">Element Report</button></div>
 			
 				<script >
 					function printElementList(){

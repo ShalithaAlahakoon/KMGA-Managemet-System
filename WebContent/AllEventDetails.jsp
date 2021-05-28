@@ -18,17 +18,17 @@
 	<jsp:include page="/EventCommonLayout.jsp"></jsp:include>
 			<h4>EVENTS</h4>
 	<div class = "main">
-		
+	
+	
 		<div id ="printEvents">
 			<!-- show all events -->
 			<table class="table table-striped">
 		
 				<tr>
 					
-						<th>Event ID</th>
+						
 						<th>Event Name</th>
 						<th>Event Symbol</th>
-						<th>Category</th>
 				</tr>
 					
 					<%
@@ -38,10 +38,9 @@
 					%>
 					
 				<tr>
-						<td><%=evnt.getEventId() %></td>
+				
 						<td><%=evnt.getEventName() %></td>
 						<td><%=evnt.getEventSymbol() %></td>
-						<td><%=evnt.getCategory() %></td>
 						
 						<td>
 							<form action="viewEvent" method="post">
@@ -59,6 +58,9 @@
 			</table>
 			
 		</div>
+		
+		
+		
 		
 
 	

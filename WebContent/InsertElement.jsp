@@ -22,15 +22,15 @@
 		
 			<div class="row">
 				<div class="col">Element ID</div>
-				<div class="col"><input type="text" name="elementId"></div>
+				<div class="col"><input type="text" name="elementId" required></div>
 			</div>
 			<div class="row">
 				<div class="col">Element Name </div>
-				<div class="col"><input type="text" name="elementName"></div>
+				<div class="col"><input type="text" name="elementName" required></div>
 			</div>
 			<div class="row">
 				<div class="col">Element Value </div>
-				<div class="col"><input type="text" name="value"></div>
+				<div class="col"><input type="text" name="value" required></div>
 			</div>
 			
 			
