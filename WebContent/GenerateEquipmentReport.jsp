@@ -27,7 +27,7 @@
 	
 		<br>
 		
-					<table class="LocationListTable">
+					<table class="table table-striped">
 					<tr>
 					
 						<th>Equipment ID</th>
@@ -61,7 +61,7 @@
 					}
 					%>
 					</table>
-					
+					</div>
 					<br>
 					<div align="center"><button onclick="printEquipmentList()" class="btn btn-info">Download Report</button></div>
 
@@ -80,7 +80,7 @@
 					html2pdf().from(element).set(opt).save();
 					}
 					</script>
-</div>
+
 
 
 

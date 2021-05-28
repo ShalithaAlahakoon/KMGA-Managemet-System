@@ -20,6 +20,8 @@
 <body>
 
 	<jsp:include page="/EventCommonLayout.jsp"></jsp:include>
+	<br>
+	
 			<h4>EVENTS</h4>
 	<div class = "main">
 		

@@ -11,6 +11,11 @@ public class schedule {
 	
 	
 	
+	public schedule(String idschedule) {
+		super();
+		this.idschedule = idschedule;
+	}
+
 	public schedule(String idschedule, String athleteId, String date, String day, String time, String description) {
 		
 		this.idschedule = idschedule;

@@ -44,7 +44,7 @@
 	   		<div class="col-sm-3">
 	    		<div class='float-right'>
 					<button type="button" class="btn btn-primary btn-sm">PROFILE</button>
-					<<a href="logingPage.jsp" class="btn btn-primary btn-sm">LOGOUT</a>
+					<a href="logingPage.jsp" class="btn btn-primary btn-sm">LOGOUT</a>
 				</div>
 	  		</div>
 	
