@@ -11,7 +11,7 @@ pageEncoding="ISO-8859-1"%>
 	<head>
  		<link rel="stylesheet" type="text/css" href="styles/main.css">
 		<meta charset="ISO-8859-1">
-		<center>
+		 <center>
 		<title>Monthly Training Progress Management</title>
 	</head>
 	<body>
