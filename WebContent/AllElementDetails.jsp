@@ -18,15 +18,14 @@
 			<h4>ELEMENTS</h4>
 	<div class = "main">
 	
-	<!-- show all elements -->
-		
-		<div id="printElements">
+	<!-- show all elements -->		
+		<div  id="printElements">
 			
 			<table class="table table-striped">
 		
 				<tr>
 					
-						<th>Element ID</th>
+						<!--<th>Element ID</th> -->
 						<th>Element Name</th>
 						<th>Value</th>
 						
@@ -39,9 +38,8 @@
 					%>
 					
 				<tr>
-						<td><%=elmnt.getElementId() %></td>
 						<td><%=elmnt.getElementName() %></td>
-						<td><%=elmnt.getValue() %></td>
+						<td><%=elmnt.getValue() %></td> 
 						
 						
 						<td>
@@ -61,7 +59,7 @@
 			
 		</div>
 		
-
+	
 	
 	</div>
 

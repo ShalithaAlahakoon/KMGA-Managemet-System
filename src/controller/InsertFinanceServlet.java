@@ -24,14 +24,13 @@ public class InsertFinanceServlet extends HttpServlet {
 		String transactionId = request.getParameter("transactionId");
 		String date = request.getParameter("date");
 		String description = request.getParameter("financeDescription");
-		String amount = request.getParameter("amount");
+		String amounts = request.getParameter("amounts");
 		String type = request.getParameter("type");
-		String balance = request.getParameter("balance");
 
 		
        	boolean isTrue;
        	
-       isTrue =	FinanceDBUtil.insertFinance(transactionId, date, description, amount, type, balance);
+       isTrue =	FinanceDBUtil.insertFinance(transactionId, date, description, Double.parseDouble(amounts), type);
        
        if(isTrue == true) {
     	   

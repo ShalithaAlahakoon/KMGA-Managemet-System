@@ -52,7 +52,7 @@ public class AttendanceDbUtil {
 			Connection con = DBConnect.getConnection();
 			Statement stmt = con.createStatement();
 			
-			String sql = "select at.AthleteID, at.FullName, a.inTime, a.outTime, a.dates from athlete at, attendance a where at.AthleteID = a.Athlete_ID";
+			String sql = "select at.AthleteID, at.FullName, a.inTime, a.outTime, a.dates from athlete at, attendance a where at.AthleteID = a.AthleteID";
 			ResultSet rs = stmt.executeQuery(sql);
 			
 			while(rs.next()) {
@@ -83,7 +83,7 @@ public class AttendanceDbUtil {
 public boolean edit(Attendance ath) throws ClassNotFoundException {
 		
 		String athleteID = ath.getaID();
-		//String name = ath.getName();
+		String name = ath.getName();
 		String inTime = ath.getInTime();
 		String outTime = ath.getOutTime();
 		String date = ath.getDate();
@@ -93,7 +93,7 @@ public boolean edit(Attendance ath) throws ClassNotFoundException {
 		
 		try {
 
-			String sql = "update attendance set inTime='"+inTime+"', outTime='"+outTime+"', dates='"+date+"' where Athlete_ID='"+athleteID+"'";
+			String sql = "update attendance set inTime='"+inTime+"', outTime='"+outTime+"', dates='"+date+"' where AthleteID='"+athleteID+"'";
 			Connection con = DBConnect.getConnection();
 			Statement stmt = con.createStatement();
 			
@@ -122,7 +122,7 @@ public boolean delete(String aID) throws ClassNotFoundException {
 	
 	try {
 	
-		String sql = "delete from attendance where Athlete_ID='"+aID+"'";
+		String sql = "delete from attendance where AthleteID='"+aID+"'";
 		Connection con = DBConnect.getConnection();
 		Statement stmt = con.createStatement();
 	
@@ -141,6 +141,38 @@ public boolean delete(String aID) throws ClassNotFoundException {
 
 	return isSuccess;
 	
+}
+public static List<Attendance> validate(String aID){
+	ArrayList<Attendance> att = new ArrayList<>();
+	
+	try {
+		Connection con = DBConnect.getConnection();
+		Statement stmt = con.createStatement();
+		
+		String sql = "select at.AthleteID, at.FullName, a.inTime, a.outTime, a.dates from athlete at, attendance a where at.AthleteID = a.AthleteID and at.AthleteID = '"+aID+"'";
+		ResultSet rs = stmt.executeQuery(sql);
+		if(rs.next()) {
+			
+			String AID = rs.getString(1);
+			String AName = rs.getString(2);
+			String inTime = rs.getString(3);
+			String outTime = rs.getString(4);
+			String date = rs.getString(5);
+			
+			
+			Attendance a = new Attendance(AID,AName,inTime,outTime,date);
+			att.add(a);
+			
+		}
+		
+		
+	}
+	catch(Exception e) {
+		e.printStackTrace();
+	}
+	
+	
+	return att;
 }
 
 }

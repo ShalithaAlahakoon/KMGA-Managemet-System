@@ -61,6 +61,7 @@
 	<!-- Side navigation -->
 	<div class="sidenav">
 	  <a href="GetAttendance.jsp">ATTENDANCE MARK</a>
+	  <a href="AthleteDetailsManagement.jsp"> ATHLETES</a>
 	  <a href="adminPage.jsp">ADMIN PAGE</a>
 	 
 	</div>

@@ -30,7 +30,7 @@
 	  
 	    	<div class="col-sm-6">
 	    	<br>
-	    		<h3>LOGGING PAGE</h3>   <!-- Function name -->
+	    		<h3>LOGIN PAGE</h3>   <!-- Function name -->
 		  		<br>
 		  		<ul class="nav justify-content-center">
 				    <li class="nav-item"> <a class="nav-link" href="Home.jsp">HOME</a></li>

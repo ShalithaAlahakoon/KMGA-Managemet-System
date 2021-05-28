@@ -31,7 +31,7 @@
 				
 				<div class="col-sm" align="center">
 					<a href="ViewAllLocations.jsp"><img alt="" src="images/equipments.jpg" width="100px" height="100px"></a>
-					<p>LOCATIONS AND <br>EQUIPMENTS</p>
+					<p>LOCATION & EQUIPMENT <br>MANAGEMENT</p>
 				</div>
 				
 				<div class="col-sm" align="center">
@@ -58,11 +58,11 @@
 				
 				<div class="col-sm" align="center">
 					<a href="ViewCompetitions.jsp"><img alt="" src="images/competition.png" width="100px" height="100px"></a>
-					<p>COMPETITIONS DETAILS <br>MANAGEMENT</p>
+					<p>COMPETITION DETAILS <br>MANAGEMENT</p>
 				</div>
 				
 				<div class="col-sm" align="center">
-					<a href="AttendanceCommonLayout.jsp"><img alt="" src="images/Attendance.png" width="100px" height="100px"></a>
+					<a href="GetAttendance.jsp"><img alt="" src="images/Attendance.png" width="100px" height="100px"></a>
 					<p>ATTENDANCE <br>MANAGEMENT</p>
 				</div>
 			</div>

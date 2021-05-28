@@ -23,7 +23,7 @@
 
 				<div class="row">
 					<div class="col">Equipment ID</div>
-					<div class="col"><input type='text' name="eqID"></div>
+					<div class="col"><input type='text' name="eqID" required></div>
 				</div>
 							
 				<div class="row">
@@ -38,7 +38,7 @@
 				
 				<div class="row">
 					<div class="col">Qty</div>
-					<div class="col"><input type="text" name="qty"></div>
+					<div class="col"><input type="text" name="qty" required></div>
 				</div>
 
 				<div class="row">

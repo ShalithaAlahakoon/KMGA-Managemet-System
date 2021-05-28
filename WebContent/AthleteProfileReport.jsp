@@ -1,3 +1,5 @@
+<%@page import="java.time.YearMonth"%>
+<%@page import="java.time.Year"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -10,12 +12,36 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
 <title>Athlete Profile</title>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
 </head>
 <body>
-	<jsp:include page="/AthleteProfileLayout.jsp"></jsp:include>
 	
+	<hr>
 	<div class="main">	
+	<div id="printArea">
+	
+	<h1> 
+			<c:forEach var="athlete" items="${athleteDetails}">
+				
+			<table>
+				<tr>
+				<td> ATHLETE DETAILS -</td>
+				<td>${athlete.fullName}</td>
+			</tr>
+			</table>
+			</c:forEach>
+	</h1>
+	
+	<p>Date and time : <%=new Date().toString() %></p>
+	
 	
 	<!-- personal details card -->
 	<div class="card">
@@ -24,7 +50,7 @@
 		
 	<c:forEach var="athlete" items="${athleteDetails}">
 		
-	<table class="table table-striped ">
+	<table >
 			<tr>
 				<td width="250px">ID  </td>
 				<td>${athlete.athleteID}</td>
@@ -72,7 +98,7 @@
 	<!-- achivements card -->
 	<div class = "card">
 		<h5 class="card-title">ACHIVEMENTS</h5>
-		<table  class="table table-striped ">
+		<table  >
 		<tr>
 			<th>ACHIVEMENT</th>
 			<th>COMPETITION</th>
@@ -88,6 +114,10 @@
 			<td>${achive.date }</td>
 		</tr>
 		</c:forEach>
+		
+		<!-- add achivements button -->
+		
+		
 		</table>
 	</div>
 	<br>
@@ -97,7 +127,7 @@
 	<!-- events card -->
 	<div class = "card">
 		<h5 class="card-title">EVENTS</h5>
-		<table  class="table table-striped ">
+		<table  >
 		<tr>
 			<th>EVENT NAME</th>
 			<th>EVENT SYMBOL</th>
@@ -111,6 +141,8 @@
 			
 		</tr>
 		</c:forEach>
+		<!-- add events button -->
+		
 		</table>
 		
 	</div>
@@ -118,48 +150,111 @@
 	
 	
 	
-	<!-- training  card -->
+	<!-- TRAINING SCHEDULE  card -->
 	<div class = "card">
 		<h5 class="card-title">TRAINING SCHEDULE</h5>
+		<table  >
+		<tr>
+			<th>SCHEDULE ID</th>
+			
+			
+		</tr>
+		
+		<c:forEach var="sd" items="${ScheduleDetails}">
+		<tr>
+			<td> ${sd.idschedule}</td>
+			
+			
+		</tr>
+		</c:forEach>
+		<!-- add events button -->
+		
+		</table>
+		
+		
+	</div>
+	
+	<br>
+	<!-- training  progress -->
+	<div class = "card">
+		<h5 class="card-title">TRAINIG PROGRESS</h5>
+		
+		<table  >
+		<tr>
+			<th>Evaluation</th>
+			<th>Score</th>
+			<th>Event ID</th>
+			<th>Element ID</th>
+			
+			
+		</tr>
+		
+		<c:forEach var="progress" items="${ProgressDetails}">
+		<tr>
+			<td> ${progress.evaluation}</td>
+			<td> ${progress.marks}</td>
+			<td> ${progress.eveId}</td>
+			<td> ${progress.athId}</td>
+			
+			
+		</tr>
+		</c:forEach>
+		<!-- add events button -->
+		
+		</table>
+		
+		
+		
+	</div>
+	
+	<br>
+	
+	
+	
+	</div>
+	
+	<br>
+	<hr>
+	<center>
+	<button onclick="printAtheleteList()" class="btn btn-primary" >DOWNLOAD REPORT</button></td>
+		</center>	
+			
+	
 	</div>
 	
 	
 	
 	
-	<c:forEach var="athlete" items="${athleteDetails}">
 	
-	<table>
-		<tr>
-			<td>
-			<form action="deleteAthlete" method="post">
-				<input type="submit" value="delete profile" >
-				<input type="hidden" value= "${athlete.athleteID}" name="id">
-			</form>
-			</td>
-			<td>
-					<form action="updateAthlete" method="post">
-						<input type="submit" value="update profile" >
-						<input type="hidden" value= "${athlete.athleteID}" name="id">
-						<input type="hidden" value= "${athlete.fullName}" name="name">
-						<input type="hidden" value= "${athlete.dob}" name="dob">
-						<input type="hidden" value= "${athlete.gender}" name="address">
-						<input type="hidden" value= "${athlete.address}" name="gender">
-						<input type="hidden" value= "${athlete.height}" name="height">
-						<input type="hidden" value= "${athlete.weight}" name="weight">
-						<input type="hidden" value= "${athlete.SLSGARegistrationNo}" name="regNo">
-						<input type="hidden" value= "${athlete.NIC}" name="nic">
-					</form>
-			</td>
-		</tr>
-	</table>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script >
+
+
+
+
+function printAtheleteList(){
+	var element = document.getElementById("printArea");
+	var opt = {
+	  margin:       0.5,
+	  filename:     'AtheleteDetails.pdf',
+	  image:        { type: 'jpeg', quality: 0.98 },
+	  html2canvas:  { scale: 3 },
+	  jsPDF:        { unit: 'in', format: 'A4', orientation: 'portrait' }
+	};
 	
-	</c:forEach>
+	// New Promise-based usage:
+	html2pdf().from(element).set(opt).save();
 	
-	
-	
-	
-	
-	
-</div>
+	swal({
+		  title: "Task Done!",
+		  text: "Report genarated!",
+		  icon: "success",
+		  button: "ok",
+		});
+}
+
+
+</script>
 </body>
 </html>

@@ -7,7 +7,7 @@
 	<title>AddNewLocation</title>
 </head>
 
-<body>
+<body background="kmgabg.jpg">
 <jsp:include page="/LECommonLayout.jsp"></jsp:include>
 	
 	
@@ -24,7 +24,7 @@
 			<form action="addLocation" method="post" class="locationForm">
 				<div class="row">
 					<div class="col">Location ID</div>
-					<div class="col"><input type='text' name='locID' ></div>
+					<div class="col"><input type='text' name='locID' required ></div>
 				</div>
 			
 				<div class="row">
@@ -52,7 +52,7 @@
 						
 				<div class="row">
 					<div class="col">Floor Size</div>
-					<div class="col"><input type='text' name='floorSize'></div>
+					<div class="col"><input type='text' name='floorSize' required></div>
 				</div>			
 						
 				<br>

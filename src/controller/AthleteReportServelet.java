@@ -18,13 +18,12 @@ import model.Score;
 import model.schedule;
 
 
-@WebServlet("/AthleteProfileServelet")
-public class AthleteProfileServelet extends HttpServlet {
+@WebServlet("/AthleteReportServelet")
+public class AthleteReportServelet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		String id = request.getParameter("id");
 		request.setAttribute("athleteID", id);
 		//testing
@@ -50,7 +49,7 @@ public class AthleteProfileServelet extends HttpServlet {
 		List<Score> ProgressDetails = AthleteDBUtill.getAthleteProgressById(id);
 		request.setAttribute("ProgressDetails", ProgressDetails);
 		
-		RequestDispatcher dis = request.getRequestDispatcher("AthleteProfile.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("AthleteProfileReport.jsp");
 		dis.forward(request, response);
 	}
 

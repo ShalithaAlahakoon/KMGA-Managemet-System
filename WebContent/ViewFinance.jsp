@@ -23,7 +23,7 @@
 	<c:set var="transactionId" value="${fin.transactionId}"/>
 	<c:set var="date" value="${fin.date}"/>
 	<c:set var="description" value="${fin.description}"/>
-	<c:set var="amount" value="${fin.amount}"/>
+	<c:set var="amounts" value="${fin.amounts}"/>
 	<c:set var="type" value="${fin.type}"/>
 	<c:set var="balance" value="${fin.balance}"/>
 	
@@ -45,7 +45,7 @@
 	
 	<tr>
 		<th>Amount</th>
-		<td>${fin.amount}</td>
+		<td>${fin.amounts}</td>
 	</tr>
 	
 	<tr>
@@ -61,11 +61,13 @@
 	</c:forEach>
 </table>
 <br>
+
+<!-- 
 <c:url value="UpdateFinance.jsp" var="finupdate">
 	<c:param name="transactionId" value="${transactionId}"/>
 	<c:param name="date" value="${date}"/>
 	<c:param name="description" value="${description}"/>
-	<c:param name="amount" value="${amount}"/>
+	<c:param name="amounts" value="${amounts}"/>
 	<c:param name="type" value="${type}"/>
 	<c:param name="balance" value="${balance}"/>
 </c:url>	
@@ -73,14 +75,18 @@
 <a href="${finupdate}">
 <input type="button" name="Update" value="Update"  class="btn btn-warning">
 </a>
+-->
 
+<a href="ViewLedger.jsp">
+<input type="button" name="Confirm" value="Confirm"  class="btn btn-success">
+</a>
 
 
 <c:url value="DeleteFinance.jsp" var="findelete">
 	<c:param name="transactionId" value="${transactionId}"/>
 	<c:param name="date" value="${date}"/>
 	<c:param name="description" value="${description}"/>
-	<c:param name="amount" value="${amount}"/>
+	<c:param name="amounts" value="${amounts}"/>
 	<c:param name="type" value="${type}"/>
 	<c:param name="balance" value="${balance}"/>
 </c:url>

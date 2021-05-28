@@ -30,6 +30,8 @@
 				
 				
 				<table class="table table-striped">
+				
+				
 					<c:forEach var="loc" items="${locDetails}">
 					
 					<c:set var="locID" value="${loc.locID}"/>
