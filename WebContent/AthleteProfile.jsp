@@ -119,6 +119,7 @@
 			</form>
 			</td>
 		</tr>
+		
 		</table>
 	</div>
 	<br>
@@ -160,10 +161,81 @@
 	
 	
 	
-	<!-- training  card -->
+	<!-- TRAINING SCHEDULE  card -->
 	<div class = "card">
 		<h5 class="card-title">TRAINING SCHEDULE</h5>
+		<table  class="table table-striped ">
+		<tr>
+			<th>SCHEDULE ID</th>
+			
+			
+		</tr>
+		
+		<c:forEach var="sd" items="${ScheduleDetails}">
+		<tr>
+			<td> ${sd.idschedule}</td>
+			
+			
+		</tr>
+		</c:forEach>
+		<!-- add events button -->
+		<tr>
+			<td>
+			<form action="AddScheduleToAthlete" method="post">
+				<input type="submit" value="ADD SCHEDULE" class="btn btn-primary">
+				<c:forEach var="athlete" items="${athleteDetails}">
+				<input type="hidden" value= "${athlete.athleteID}" name="id">
+				</c:forEach>
+			</form>
+			</td>
+		</tr>
+		</table>
+		
+		
 	</div>
+	
+	<br>
+	<!-- training  progress -->
+	<div class = "card">
+		<h5 class="card-title">TRAINIG PROGRESS</h5>
+		
+		<table  class="table table-striped ">
+		<tr>
+			<th>Evaluation</th>
+			<th>Score</th>
+			<th>Event ID</th>
+			<th>Element ID</th>
+			
+			
+		</tr>
+		
+		<c:forEach var="progress" items="${ProgressDetails}">
+		<tr>
+			<td> ${progress.evaluation}</td>
+			<td> ${progress.marks}</td>
+			<td> ${progress.eveId}</td>
+			<td> ${progress.athId}</td>
+			
+			
+		</tr>
+		</c:forEach>
+		<!-- add events button -->
+		
+		</table>
+		
+		
+		
+	</div>
+	
+	<br>
+	<!-- training  card -->
+	<div class = "card">
+		<h5 class="card-title"></h5>
+		
+		
+	</div>
+	
+	
 	</div>
 	
 	<br>
@@ -188,8 +260,15 @@
 						<input type="hidden" value= "${athlete.NIC}" name="nic">
 					</form>
 			</td>
-			<td width="150%"><button onclick="printAtheleteList()" class="btn btn-primary">GENARATE  REPORT</button></td>
 			
+			<td width="150%"> 
+			
+				<form action="athleteReport" method="post" target="_blank">
+						<input type="submit" value="GENARATE REPORT" class="btn btn-primary">
+						<input type="hidden" value= "${athlete.athleteID}" name="id">
+						
+					</form>
+			</td>
 			
 			<td >
 

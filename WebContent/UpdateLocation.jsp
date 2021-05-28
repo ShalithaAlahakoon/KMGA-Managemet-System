@@ -48,7 +48,7 @@
 					<div class="col">Assign Location</div>
 					<div class="col">
 						<select id="mapLetter" name="mapLetter">
-									<option value='A'><%= mapLetter %></option>
+									<option><%= mapLetter %></option>
 									<option value='A'>A</option>
 									<option value='B'>B</option>
 									<option value='C'>C</option>

@@ -34,7 +34,7 @@
 	
 		<tr>
 			<td>Amount</td>
-			<td><input type="text" name="amount" required></td>
+			<td><input type="text" name="amounts" required></td>
 		</tr>
 	
 
@@ -43,15 +43,11 @@
 			<td> <select name="type">
 			    <option value="capital">capital</option>
 			    <option value="income">income</option>
-			    <option value="expense">expenses</option>
+			    <option value="expenses">expenses</option>
 			
 			  </select></td>
 		</tr>
 		
-		<tr>
-			<td>Balance</td>
-			<td><input type="text" name="balance" required></td>
-		</tr>	
 	
 		<tr>
 		

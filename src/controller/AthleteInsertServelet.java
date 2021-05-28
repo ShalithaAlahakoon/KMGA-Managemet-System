@@ -41,8 +41,10 @@ public class AthleteInsertServelet extends HttpServlet {
 			dis.forward(request, response);
 		} else {
 			System.out.println("failed");
-			RequestDispatcher dis2 = request.getRequestDispatcher("AthleteInsert.jsp");
+			RequestDispatcher dis2 = request.getRequestDispatcher("AthleteInsertUnsuccess.jsp");
 			dis2.forward(request, response);
+			
+			
 			
 			
 		}

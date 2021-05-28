@@ -35,10 +35,8 @@
 			</tr>
 			<tr>
 				<td>Gender</td>
-				<td><input type="radio"  name="gender" value="MALE">
-			  <label for="male">Male</label>
-			  <input type="radio"  name="gender" value="FEMALE">
-			  <label for="female">Female</label></td>
+				<td><input type="text"  name="gender" value="${athlete.gender}" readonly >
+			  </td>
 			</tr>
 			<tr>
 				<td>Height (cm)</td>

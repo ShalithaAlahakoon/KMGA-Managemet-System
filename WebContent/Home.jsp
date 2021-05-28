@@ -60,7 +60,7 @@
 	
 	<div class="card-columns" align="center">
 	<!--NEWS 1-->
-	<div class="card" style="width: 18rem;">
+	<div class="card" style="width: 20rem ; height:35rem;">
 	  <img class="card-img-top" src="images/nevs1.jpg" alt="Card image cap">
 	  <div class="card-body">
 	    <h5 class="card-title">First Acrobatic World Cup in a year also last stop before World Championships</h5>
@@ -69,7 +69,7 @@
 	  </div>
 	</div>
 	<!--NEWS 2-->
-	<div class="card" style="width: 18rem;">
+	<div class="card" style="width: 20rem; height:35rem;">
 	  <img class="card-img-top" src="images/nevs2.jpg" alt="Card image cap">
 	  <div class="card-body">
 	    <h5 class="card-title">With Olympic tickets up for grabs, European Championships will bring exciting battles</h5>
@@ -78,7 +78,7 @@
 	  </div>
 	</div>
 	<!--NEWS 3-->
-	<div class="card" style="width: 18rem;">
+	<div class="card" style="width: 20rem; height:35rem;">
 	  <img class="card-img-top" src="images/nevs3.jpg" alt="Card image cap">
 	  <div class="card-body">
 	    <h5 class="card-title">Media registration timeline for 2021 Gymnastics Worlds</h5>
