@@ -28,7 +28,7 @@ public class AthleteTrainigScheduleDBUtil {
 		Class.forName("com.mysql.jdbc.Driver");
 		con = DBConnect.getConnection();
 		stmt = con.createStatement();
-		String sql ="Select * from sampath_schedule where athleteId='"+athleteId+"'";
+		String sql ="Select * from schedule where athleteId='"+athleteId+"'";
 		ResultSet rs = stmt.executeQuery(sql);
 		
 		if(rs.next()) {
@@ -59,7 +59,7 @@ public class AthleteTrainigScheduleDBUtil {
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DBConnect.getConnection();
 			stmt = con.createStatement();
-			String sql = "Select * from sampath_schedule where athleteId='"+athleteId+"'";
+			String sql = "Select * from schedule where athleteId='"+athleteId+"'";
 			rs = stmt.executeQuery(sql);
 			
 			if (rs.next()) {
@@ -91,7 +91,7 @@ public class AthleteTrainigScheduleDBUtil {
 				Class.forName("com.mysql.jdbc.Driver");
 				con = DBConnect.getConnection();
 				stmt = con.createStatement();
-				String sql = "select * from sampath_schedule";
+				String sql = "select * from schedule";
 				ResultSet rs = stmt.executeQuery(sql);
 				
 				while(rs.next()) {
