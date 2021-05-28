@@ -70,7 +70,7 @@
 				<button type="submit" class="button btn-lg" name="proId" value="${proId}" ><span>Delete</span></button>
 			</form>
 						
-			<a href="main.jsp"><button type="button btn-lg" class="button btn-lg"><span>back</span></button></a>
+			<a href="ProgressHome.jsp"><button type="button btn-lg" class="button btn-lg"><span>back</span></button></a>
 		
 		</div>
 	  </div>

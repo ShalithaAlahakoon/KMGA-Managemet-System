@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import DBUtill.AttendanceDbUtil;
-import model.Attendance;
+
 
 /**
  * Servlet implementation class AttendanceDeleteServlet

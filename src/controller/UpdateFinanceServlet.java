@@ -24,20 +24,19 @@ public class UpdateFinanceServlet extends HttpServlet {
 		String transactionId = request.getParameter("transactionId");
 		String date = request.getParameter("date");
 		String description = request.getParameter("description");
-		String amount = request.getParameter("amount");
+		String amounts = request.getParameter("amounts");
 		String type = request.getParameter("type");
-		String balance = request.getParameter("balance");
 		
 		System.out.println(transactionId);
 		System.out.println(date);
 		System.out.println(description);
-		System.out.println(amount);
+		System.out.println(amounts);
 		System.out.println(type);
-		System.out.println(balance);
+
 		
 		boolean isTrue;
 		
-		isTrue = FinanceDBUtil.updatefinance(transactionId, date, description, amount, type, balance);
+		isTrue = FinanceDBUtil.updatefinance(transactionId, date, description, Double.parseDouble(amounts), type);
 		
 		if(isTrue == true) {
 			

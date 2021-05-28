@@ -57,6 +57,7 @@
 	<!-- Side navigation -->
 	<div class="sidenav">s
 	  <a href="AthleteInsert.jsp">ADD NEW ATHLETE</a>
+	  <a href="AthleteDetailsManagement.jsp"> ATHLETES</a>
 	  <a href="AthleteListReport.jsp">GENARATE REPORT</a>
 	  <a href="adminPage.jsp">ADMIN PAGE</a>
 	</div>

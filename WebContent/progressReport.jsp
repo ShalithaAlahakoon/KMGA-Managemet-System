@@ -1,5 +1,6 @@
 <%@page import="java.util.*"%>
 <%@page import="model.Score"%>
+<%@page import="model.rankProgress"%>
 <%@page import="DBUtill.ScoreDBUtill"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -22,7 +23,40 @@
 	
 	
 	<div id="printArea">
-		<h4>Monthly Training Progress Report</h4>	
+	    <center>
+		<h1>Monthly Training Progress Report</h1>
+		<h4>Date and time : <%=new Date().toString() %> </h4>	<br> <br>
+		
+				<table style="width:50%" class="table table-striped">
+			
+			    <tr>					
+						<th>Rank</th>
+						<th>Athlete ID</th>
+						<th>Average Score</th>
+					
+				<%
+					List <rankProgress> rank = ScoreDBUtill.getRank();
+					
+					int count = 1;
+					
+					for(rankProgress read : rank){
+					%>
+					
+				<tr>
+						<td><%=count %></td> 
+						<td><%=read.getAthId() %></td>
+						<td><%=read.getTotal() %></td>
+																	
+				</tr>
+				
+				
+			
+					<%
+					count++;
+					
+					}
+					%>
+			</table>   <br> <br> <br>
 				<table style="width:80%" class="table table-striped">
 		
 				<tr>					
@@ -54,6 +88,8 @@
 					}
 					%>
 			</table>
+			
+			
 						
 			
 	</div>

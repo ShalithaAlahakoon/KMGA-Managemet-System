@@ -1,9 +1,14 @@
 package DBUtill;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
+
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+
+import model.schedule;
 
 public class TS_DButil {
 	
@@ -96,6 +101,33 @@ public class TS_DButil {
 		}
 		
 		return isSuccess;
+	}
+
+	public static List<schedule> getSchedules() {
+		List<schedule> Schedule = new ArrayList<>();
+		
+		try {
+			
+			con = DBConnect.getConnection();
+			stmt = con.createStatement();
+			String sql = "select * from kmga.schedule ";
+			rs = stmt.executeQuery(sql);
+			
+			while (rs.next()) {
+				String scheduleID = rs.getString(1);
+				System.out.println(scheduleID);
+				
+				schedule obj = new schedule(scheduleID);
+				Schedule.add(obj);
+			}
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+			}
+		
+		
+		
+		return Schedule;	
 	}
 	
 }

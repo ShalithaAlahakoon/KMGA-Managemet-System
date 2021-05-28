@@ -28,22 +28,22 @@
 		<div class="col-sm-6">
 		
 			
-			
+			<br>
 			<div class="row">
 				<div class="col">Element ID</div>
 				<div class="col">${elmnt.elementId } </div>
 			</div>
-			
+			<br>
 			<div class="row">
 				<div class="col">Element Name</div>
 				<div class="col">${elmnt.elementName }</div>
 			</div>
-			
+			<br>
 			<div class="row">
 				<div class="col">Value</div>
 				<div class="col">${elmnt.value }</div>
 			</div>
-			
+			<br>
 		</div>
 		
 		<div class="col-sm-3"></div>

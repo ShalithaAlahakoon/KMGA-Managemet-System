@@ -17,16 +17,17 @@ import DBUtill.DBConnect;
 import model.Achivement;
 import model.Athlete;
 import model.AthleteEvent;
+import model.schedule;
 
 
-@WebServlet("/SaveEventToAthleteServelet")
-public class SaveEventToAthleteServelet extends HttpServlet {
+@WebServlet("/SaveScheduleToAtheletServelet")
+public class SaveScheduleToAtheletServelet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		String eventID = request.getParameter("event");
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String scheduleID = request.getParameter("schedule");
 		String athleteID = request.getParameter("id");
 		
 		boolean isSuccess = false;
@@ -34,7 +35,7 @@ public class SaveEventToAthleteServelet extends HttpServlet {
 		try {
 			Connection con = DBConnect.getConnection();
 			Statement stmt = con.createStatement();
-		    String sql = "insert into kmga.athlete_event values ('"+athleteID+"','"+eventID+ "')";
+		    String sql = "insert into kmga.athlete_schedule values ('"+athleteID+"','"+scheduleID+ "')";
 
 		    int rs = stmt.executeUpdate(sql);
 			
@@ -52,7 +53,7 @@ public class SaveEventToAthleteServelet extends HttpServlet {
 
 		if (isSuccess == true) {
 			
-			System.out.println("Event sucessfully added");
+			System.out.println("Schedule sucessfully added");
 			request.setAttribute("athID", athleteID);
 			
 			//getting athletes
@@ -67,6 +68,11 @@ public class SaveEventToAthleteServelet extends HttpServlet {
 			List<AthleteEvent> aeDetails = AthleteDBUtill.getAthleteEventById(athleteID);
 			request.setAttribute("aeDetails", aeDetails);
 			
+			//getting schedule
+			List<schedule> ScheduleDetails = AthleteDBUtill.getAthleteScheduleById(athleteID);
+			request.setAttribute("ScheduleDetails", ScheduleDetails);
+			
+
 			RequestDispatcher dis = request.getRequestDispatcher("AthleteProfileSuccess.jsp");
 			dis.forward(request, response);
 			
@@ -74,7 +80,7 @@ public class SaveEventToAthleteServelet extends HttpServlet {
 			
 		} else {
 			
-			System.out.println("Event adding failed");
+			System.out.println("Schedule adding failed");
 			RequestDispatcher dis = request.getRequestDispatcher("AthleteProfileUnsuccess.jsp");
 			dis.forward(request, response);
 			
@@ -85,6 +91,5 @@ public class SaveEventToAthleteServelet extends HttpServlet {
 		}
 		
 	}
-	
 
 }

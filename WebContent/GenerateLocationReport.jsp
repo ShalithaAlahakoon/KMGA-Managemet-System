@@ -32,7 +32,7 @@
 			<div class="col-sm-10">
 				
 		
-					<table class="LocationListTable">
+					<table class="table table-striped">
 					<tr>
 					
 						<th>Location ID</th>
@@ -58,7 +58,9 @@
 					}
 					%>
 					</table>
-					
+					</div>
+					</div>
+					</div>
 					<br>
 					<div align="center"><button onclick="printLocationList()" class="btn btn-info">Download Report</button></div>
 
@@ -79,13 +81,13 @@
 					</script>
 					
 					
-			</div>
+			
 			<div class="col-sm-1"></div>
-		</div>
+		
 		
 
 
 
-</div>
+
 </body>
 </html>

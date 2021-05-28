@@ -34,7 +34,7 @@ public class deleteScoreServlet extends HttpServlet {
 			
 			if(answer == true) {
 				
-				set.println("<script type = 'text/javascript'>");
+			    set.println("<script type = 'text/javascript'>");
 				set.println("alert('DELETE SUCCESSFULLY');");
 				set.println("location = 'ProgressHome.jsp'");
 				set.println("</script>");

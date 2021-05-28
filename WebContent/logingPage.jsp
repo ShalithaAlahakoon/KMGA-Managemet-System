@@ -12,7 +12,9 @@
 	 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-<title>loging Page</title>
+<title>login Page</title>
+
+<link rel="stylesheet" href="styles/Common.css">
 </head>
 <body>
 <jsp:include page="/LoginPageLayout.jsp"></jsp:include>
@@ -23,7 +25,7 @@
 	<div class="card w-50 " >
 	
 	  <div class="card-body">
-	    <h5 class="card-title">ADMIN LOGING </h5>
+	    <h5 class="card-title">ADMIN LOGIN </h5>
 	  
 			<form action="log" method="post" >
 			<table>

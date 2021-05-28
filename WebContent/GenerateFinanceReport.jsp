@@ -48,7 +48,7 @@
 			<td><%=fin.getTransactionId()%></td>
 			<td><%=fin.getDate()%></td>
 			<td><%=fin.getDescription()%></td>
-			<td><%=fin.getAmount() %></td>
+			<td><%=fin.getAmounts() %></td>
 			<td><%=fin.getType()%></td>
 			<td><%=fin.getBalance()%></td>
 		</tr>
@@ -56,9 +56,16 @@
 		}
 		%>
 	</table>
+	</div>
 	
 	<br>
-					<div align="center"><button onclick="printFinanceList()" class="btn btn-info">Download Finance Report</button></div>
+					<div align="center">
+					<button onclick="printFinanceList()" class="btn btn-info">Download Finance Report</button>
+					
+					<a href="ViewLedger.jsp">
+						<input type="button" name="Back" value="Back"  class="btn btn-primary">
+					</a>
+					</div>
 
 
 					<script >
@@ -75,10 +82,12 @@
 					html2pdf().from(element).set(opt).save();
 					}
 					</script>
+					
 
 
 
-</div>
+
+
 
 </body>
 </html>

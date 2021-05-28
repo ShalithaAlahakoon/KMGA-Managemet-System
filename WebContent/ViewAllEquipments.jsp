@@ -16,7 +16,7 @@
 	<jsp:include page="/LECommonLayout.jsp"></jsp:include>
 
 	<div class="main">
-		<h4>VIEW EQUIPMENTS</h4>
+		<h4>EQUIPMENTS</h4>
 		
 	
 		<br>
@@ -24,7 +24,6 @@
 					<table class="table table-striped">
 					<tr>
 					
-						<th>Equipment ID</th>
 						<th>Equipment Name</th>
 						<th>Description</th>
 						<th>Qty</th>
@@ -39,7 +38,6 @@
 					%>
 					
 					<tr>
-						<td><%=eq.getEqID() %></td>
 						<td><%=eq.getEqName() %></td>
 						<td><%=eq.getEqDescription() %></td>
 						<td><%=eq.getQty() %></td>
