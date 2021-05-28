@@ -9,6 +9,7 @@ public class Score {
 	private String eleId;
 	private String athId;
 	
+	//test comment 2
 	
 	public Score(String proId, String evaluation, float marks, String eveId, String eleId, String athId) {
 		super();
