@@ -14,18 +14,30 @@ public class FinanceDBUtil {
 	private static Connection con = null;
 	private static Statement stmt = null;
 	private static ResultSet hk = null;
+	private static Double finalBalance = 0.0;
 	
 	
 	//insert records
-	public static boolean insertFinance(String transactionId, String date, String description, String amount, String type, String balance) {
+	public static boolean insertFinance(String transactionId, String date, String description, Double amounts, String type) {
 		
 		boolean isSuccess = false;
+		
+		if(type.contentEquals("capital")) {
+			finalBalance = getBalance()+amounts;
+		}
+		else if(type.contentEquals("income")) {
+			finalBalance = getBalance()+amounts;
+		}
+		else if(type.contentEquals("expenses")) {
+			finalBalance = getBalance()-amounts;
+		}
+		
 				
 		try {
 			
             con = DBConnect.getConnection();
             stmt = con.createStatement();
-			String sql = "Insert into finance values ('"+transactionId+"','"+date+"','"+description+"','"+amount+"','"+type+"','"+balance+"')";
+			String sql = "Insert into finance values ('"+transactionId+"','"+date+"','"+description+"','"+amounts+"','"+type+"','"+finalBalance+"')";
 			int hk = stmt.executeUpdate(sql);
 			
 			if(hk > 0) {
@@ -43,9 +55,10 @@ public class FinanceDBUtil {
 	}
 	
 	
-	
-	
-	//view records
+
+
+
+		//view records
 		public static List<Finance> getRecords() {
 			
 			ArrayList<Finance> fin = new ArrayList<>();
@@ -61,11 +74,11 @@ public class FinanceDBUtil {
 					String transactionId1 = hk.getString(1);
 					String date = hk.getString(2);
 					String description = hk.getString(3);
-					String amount = hk.getString(4);
+					Double amounts = hk.getDouble(4);
 					String type = hk.getString(5);
-					String balance = hk.getString(6);
+					Double balance = hk.getDouble(6);
 					
-					Finance f = new Finance(transactionId1,date,description,amount,type,balance);
+					Finance f = new Finance(transactionId1,date,description,amounts,type,balance);
 					fin.add(f);
 				}
 			}
@@ -97,11 +110,11 @@ public class FinanceDBUtil {
 				String transactionId1 = hk.getString(1);
 				String date = hk.getString(2);
 				String description = hk.getString(3);
-				String amount = hk.getString(4);
+				Double amounts = hk.getDouble(4);
 				String type = hk.getString(5);
-				String balance = hk.getString(6);
+				Double balance = hk.getDouble(6);
 				
-				Finance f = new Finance(transactionId1,date,description,amount,type,balance);
+				Finance f = new Finance(transactionId1,date,description,amounts,type,balance);
 				fin.add(f);
 			}
 		}
@@ -116,14 +129,25 @@ public class FinanceDBUtil {
 	
 	
 	//update records
-	public static boolean updatefinance(String transactionId, String date, String discription, String amount, String type, String balance) {
+	public static boolean updatefinance(String transactionId, String date, String description, Double amounts, String type) {
+		
+		if(type.contentEquals("capital")) {
+			finalBalance = getBalance()+amounts;
+		}
+		else if(type.contentEquals("income")) {
+			finalBalance = getBalance()+amounts;
+		}
+		else if(type.contentEquals("expenses")) {
+			finalBalance = getBalance()-amounts;
+		}
 		
 		try {
 			
 			con = DBConnect.getConnection();
 			stmt = con.createStatement();
-			String sql = "Update finance set date='"+date+"',Description='"+discription+"',amount='"+amount+"',Type='"+type+"',Balance='"+balance+"'"
-					+ "where TransactionID = '"+transactionId+"'";
+//			String sql = "Update finance set date='"+date+"',Description='"+description+"',amount='"+amounts+"',Type='"+type+"',Balance='"+finalBalance+"'"
+//			+ "where TransactionID = '"+transactionId+"'";
+	String sql = "Insert into finance values ('"+transactionId+"','"+date+"','"+description+"','"+amounts+"','"+type+"','"+finalBalance+"')";
 			int hk = stmt.executeUpdate(sql);
 			
 			if(hk > 0) {
@@ -172,6 +196,41 @@ public class FinanceDBUtil {
 	
 	
 	
+	//calculate balance
+		public static Double getBalance() {
+			Double balance =0.0;
+			
+			
+			List<Finance> finance = getRecords();
+			
+			for (Finance finance2 : finance) {
+				
+				System.out.println("type" +finance2.getType());
+				String type = finance2.getType();
+				System.out.println("amount"+finance2.getAmounts());
+				
+				
+				
+				if(type.contentEquals("capital")) {
+					System.out.println("capital called");
+					balance = balance + finance2.getAmounts();
+				}
+				else if(type.contentEquals("income")) {
+					System.out.println("income called");
+					balance = balance + finance2.getAmounts();
+				}
+				else if(type.contentEquals("expenses")) {
+					System.out.println("expenses called");
+					balance = balance - finance2.getAmounts();
+				}
+
+				
+			}
+			
+			System.out.println("balance = "+balance);
+			return balance;
+		}
+		
 	
 	
 	

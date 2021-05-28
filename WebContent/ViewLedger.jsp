@@ -40,7 +40,7 @@
 			<td><%=fin.getTransactionId()%></td>
 			<td><%=fin.getDate()%></td>
 			<td><%=fin.getDescription()%></td>
-			<td><%=fin.getAmount() %></td>
+			<td><%=fin.getAmounts() %></td>
 			<td><%=fin.getType()%></td>
 			<td><%=fin.getBalance()%></td>
 		</tr>
