@@ -19,9 +19,7 @@ public class Competition {
 	}
 
 	
-	
-
-	public String getCmpId() {
+		public String getCmpId() {
 		return cmpId;
 	}
 
@@ -45,11 +43,5 @@ public class Competition {
 		return venue;
 	}
 
-
-
-	
-
-	
-	
 }
 	

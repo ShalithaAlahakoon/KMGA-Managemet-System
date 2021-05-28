@@ -311,6 +311,17 @@
 		<url-pattern>/updateComp</url-pattern>
 	</servlet-mapping>
 	
+	
+	<servlet>
+		<servlet-name>deleteCompetitionDetails</servlet-name>
+		<servlet-class>controller.DeleteCompetitionServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>deleteCompetitionDetails</servlet-name>
+		<url-pattern>/deleteComp</url-pattern>
+	</servlet-mapping>
+	
+	
 		<!-- Add new Schedule -->
          <servlet>
          	<servlet-name>Create_TS_servelet</servlet-name>

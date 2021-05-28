@@ -174,6 +174,36 @@ public class CompetitionDBUtil {
 		    	return cmp;
 		    }
 		    
+		    
+		    
+		  // Delete Competition details  
+		    
+		    public static boolean deleteCompetitions(String cmpId) {
+		    	
+		    	
+		    	
+		    	try {
+		    		
+		    		con = DBConnect.getConnection();
+		    		stmt = con.createStatement();
+		    		String sql = "delete from competion where Cmp_id='"+cmpId+"'";
+		    		int r = stmt.executeUpdate(sql);
+		    		
+		    		if (r > 0) {
+		    			isSuccess = true;
+		    		}
+		    		else {
+		    			isSuccess = false;
+		    		}
+		    		
+		    	}
+		    	catch (Exception e) {
+		    		e.printStackTrace();
+		    	}
+		    	
+		    	return isSuccess;
+		    }
+		    
 
 	}
 
