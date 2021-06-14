@@ -1,6 +1,6 @@
 <%@page import="java.util.*"%>
 <%@page import="model.Score"%>
-<%@page import="DBUtill.ScoreDBUtill"%>
+<%@page import="DBUtill.*"%>
 
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -30,10 +30,10 @@ pageEncoding="ISO-8859-1"%>
 			<table style="width:80%" class="table table-striped">
 		
 				<tr>					
-						<th>Progress ID</th>
+					
 						<th>Evaluation</th>
 						<th>Score</th>
-						<th>Event ID</th>
+						<th>Event Name</th>
 						<th>Element ID</th>
 						<th>Athlete ID</th>
 				</tr>
@@ -45,12 +45,12 @@ pageEncoding="ISO-8859-1"%>
 					%>
 					
 				<tr>
-						<td><%=marks.getProId() %></td>
+					
 						<td><%=marks.getEvaluation() %></td>
 						<td><%=marks.getMarks() %></td>
-						<td><%=marks.getEveId() %></td>
-						<td><%=marks.getEleId() %></td>
-						<td><%=marks.getAthId() %></td>												
+						<td><%=EventDBUtill.getEventNameById(marks.getEveId()) %></td>
+						<td><%=EventDBUtill.getElementNameById(marks.getEleId()) %></td>
+						<td><%=AthleteDBUtill.getAthleteNameById(marks.getAthId()) %></td>												
 				</tr>
 			
 					<%

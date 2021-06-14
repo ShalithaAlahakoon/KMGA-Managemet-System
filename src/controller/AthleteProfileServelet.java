@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
+
 import DBUtill.AthleteDBUtill;
 import model.Achivement;
 import model.Athlete;
@@ -52,6 +54,8 @@ public class AthleteProfileServelet extends HttpServlet {
 		
 		RequestDispatcher dis = request.getRequestDispatcher("AthleteProfile.jsp");
 		dis.forward(request, response);
+		
+		
 	}
 
 }
