@@ -196,6 +196,35 @@ public static List<Athlete> getAthleteById(String id){
 	
 }
 
+public static String getAthleteNameById(String id){
+	
+	
+	String name = null;
+	
+	try {
+		
+		con = DBConnect.getConnection();
+		stmt = con.createStatement();
+		String sql = "select * from athlete where AthleteID='"+id+"'";
+		rs = stmt.executeQuery(sql);
+		
+		while (rs.next()) {
+			
+			name = rs.getString(2);
+			
+			
+			
+		}
+		
+	} catch (Exception e) {
+		
+	}
+	
+	return name;	
+	
+}
+
+
 public static boolean DeleteAthleteByID(String id) {
 	
 try {
@@ -372,8 +401,8 @@ ArrayList<schedule> Schedule = new ArrayList<>();
 	return Schedule;	
 }
 
-public static List<Score> getAthleteProgressById(String id) {
-	
+public static ArrayList<Score> getAthleteProgressById(String id) {
+	System.out.println("Id recived = " + id);
 	ArrayList<Score> score = new ArrayList<>();
 try {
 		
@@ -389,6 +418,8 @@ try {
 			String eventID = rs.getString(4);
 			String elementID = rs.getString(5);
 			String athleteID= rs.getString(6);
+			
+			System.out.println(athleteID);
 			
 			Score obj = new Score(progressID, evaluation, scores,eventID,elementID,athleteID);
 			score.add(obj);

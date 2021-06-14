@@ -16,7 +16,7 @@ public class Athlete {
 //	private String []injuries;
 	
 	
-	
+	//TEST COMMENT
 	//constructor
 	public Athlete(String athleteID, String fullName, String dob, String gender, String address, String height,
 			String weight, String sLSGARegistrationNo, String nIC, String psd) {

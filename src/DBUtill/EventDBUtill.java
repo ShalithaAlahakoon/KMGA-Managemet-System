@@ -265,6 +265,49 @@ public class EventDBUtill {
 			
 			return evnt;
 		}
+		//get Event name
+				public static String getEventNameById (String ID){
+					
+					String evntName = null;
+					try {
+						
+						con = DBConnect.getConnection();
+						stmt = con.createStatement();
+						String sql = "select * from event where  EventID = '"+ID+"'";
+						rs = stmt.executeQuery(sql);
+						
+						while(rs.next()) {
+							evntName = rs.getString(2);	
+						}
+					}
+					catch(Exception e){
+						e.printStackTrace();
+					}
+					
+					return evntName;
+				}
+		
+				//get Event name
+				public static String getElementNameById (String ID){
+					
+					String eleName = null;
+					try {
+						
+						con = DBConnect.getConnection();
+						stmt = con.createStatement();
+						String sql = "select * from element where  ElementID = '"+ID+"'";
+						rs = stmt.executeQuery(sql);
+						
+						while(rs.next()) {
+							eleName = rs.getString(2);	
+						}
+					}
+					catch(Exception e){
+						e.printStackTrace();
+					}
+					
+					return eleName;
+				}
 		
 		//display All EventElement
 				public static List<EventElement> getEventElement (){

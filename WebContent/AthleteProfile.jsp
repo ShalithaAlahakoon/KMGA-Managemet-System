@@ -6,8 +6,8 @@
 
 <%@page import="java.util.*"%>
 <%@page import="model.Achivement"%>
-<%@page import="model.Athlete"%>
-<%@page import="DBUtill.AthleteDBUtill"%>
+<%@page import="model.*"%>
+<%@page import="DBUtill.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -207,18 +207,29 @@
 			<th>Element ID</th>
 			
 			
+			
 		</tr>
+			<%
+			String id = (String)request.getAttribute("athleteID");
+			//out.println(id);
+			ArrayList<Score> ProgressDetails = AthleteDBUtill.getAthleteProgressById(id);
+			
+			//out.println(ProgressDetails);
+			
 		
-		<c:forEach var="progress" items="${ProgressDetails}">
+			for(Score score : ProgressDetails) {
+			%>
+
 		<tr>
-			<td> ${progress.evaluation}</td>
-			<td> ${progress.marks}</td>
-			<td> ${progress.eveId}</td>
-			<td> ${progress.athId}</td>
+		
+			<td><%=score.getEvaluation() %></td>
+			<td> <%=score.getMarks() %></td>
+			<td> <%=EventDBUtill.getEventNameById(score.getEveId())%></td>
+			<td><%=EventDBUtill.getElementNameById(score.getEleId())%></td>
 			
 			
 		</tr>
-		</c:forEach>
+		<% } %>
 		<!-- add events button -->
 		
 		</table>
