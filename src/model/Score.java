@@ -10,6 +10,7 @@ public class Score {
 	private String athId;
 	
 	
+	
 	public Score(String proId, String evaluation, float marks, String eveId, String eleId, String athId) {
 		super();
 		this.proId = proId;

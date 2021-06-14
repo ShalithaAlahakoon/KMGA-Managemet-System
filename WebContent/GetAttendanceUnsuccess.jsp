@@ -11,9 +11,11 @@
 <body>
 <body>
 <div class="main">
+<img alt="" src="images/bn.png" width="300px" height="300px" style="margin-left:35%">
  <h2>You already added your attendance...</h2>
+ <br>
 
-	<form action="GetAttendance.jsp" method="post"><button class="btn btn-success">BACK TO GET ATTENDANCE</button></form>
+	<form action="GetAttendance.jsp" method="post"><button class="btn btn-success" style="margin-left:40%">BACK TO GET ATTENDANCE</button></form>
 
 
 

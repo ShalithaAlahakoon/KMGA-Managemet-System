@@ -22,13 +22,32 @@
 	%>
 
 	<form action="update" method="post">
-		Schedule ID<input type="text" name="idschedule" value="<%=idschedule %>" readonly><br>
-		Athlete ID<input type ="text" name="athleteId" value="<%=athleteId %>" readonly><br>
-		Date<input type ="text" name="date" value="<%=date %>"><br>
-		Day<input type ="text" name="day" value="<%=day %>"><br>
-		time<input type ="text" name="time" value="<%=time %>"><br>
-		Description<input type ="text" name="description" value="<%=description %>"><br>
-		
+		<table>
+			<tr>
+				<td> <lable for ="idschedule">Schedule ID</lable> </td>
+				<td> <input type="text" name="idschedule" value="<%=idschedule %>" readonly><br> </td>
+			</tr>
+			<tr>
+				<td> <lable for ="athleteId">Athlete ID</lable></td>
+				<td> <input type ="text" name="athleteId" value="<%=athleteId %>" readonly><br> </td>
+			</tr>
+			<tr>
+				<td> <lable for ="date">Date</lable></td> 
+				<td> <input type ="text" name="date" value="<%=date %>"><br> </td>
+			</tr>
+			<tr>
+				<td> <lable for ="day">Day</lable> </td>
+				<td> <input type ="text" name="day" value="<%=day %>"><br> </td>
+			</tr>
+			<tr>
+				<td> <lable for ="time">Time</lable></td>
+				<td> <input type ="text" name="time" value="<%=time %>"><br> </td>
+			</tr>
+			<tr>
+				<td> <lable for ="description">Description</lable></td>
+				<td> <input type ="text" name="description" value="<%=description %>"><br> </td>
+			</tr> 
+		</table>
 		<input type="submit" class="btn btn-primary btn-sm" name="submit" value="Update My Data"><br>
 		
 	</form>

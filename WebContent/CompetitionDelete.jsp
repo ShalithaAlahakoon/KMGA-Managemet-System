@@ -4,14 +4,13 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Update</title>
+<title>Delete</title>
 </head>
 <body>
 <jsp:include page="/CompettionCommonLayout.jsp"></jsp:include>
 <div class="main">
 <div align="center">
-
-<h4>UPDATE COMPETITION DETAILS</h4><br><br><br>
+<h4>DELETE COMPETITION DETAILS</h4><br><br><br>
 
 <%
 	String cmpId = request.getParameter("cmpId");
@@ -21,9 +20,8 @@
 	String venue = request.getParameter("venue");
 %>
 
-<form action="updateComp" method ="post">
-
-
+<form action="deleteComp" method ="post">
+	
 		<div class="col-sm-3"></div>
 
 		<div class="col-sm-6">
@@ -34,22 +32,22 @@
 			</div>
 			<div class="row">
 				<div class="col">Competition Name:	</div>
-				<div class="col"><input type = "text" name = "cmpName" value="<%= cmpName %>"></div>
+				<div class="col"><input type = "text" name = "cmpName" value="<%= cmpName %>" readonly></div>
 			</div>
 		    <div class="row"> 
 		   		<div class="col">Date :		</div>
-		   		<div class="col"><input type="DATE" name= "date" value="<%= date %>" ></div>
+		   		<div class="col"><input type="DATE" name= "date" value="<%= date %>" readonly ></div>
 		   	</div>
 		    <div class="row"> 
 		    	<div class="col">Time:		</div>
-		    	<div class="col"><input type ="TIME" name = "time" value="<%= time %>"></div>
+		    	<div class="col"><input type ="TIME" name = "time" value="<%= time %>" readonly></div>
 		    </div>
 		    <div class="row">
 		   		 <div class="col">Venue :		</div>
-		   		 <div class="col"><input type = "text" name = "venue" value="<%= venue %>"></div>
+		   		 <div class="col"><input type = "text" name = "venue" value="<%= venue %>" readonly></div>
 		   	</div>
 		   		 
-		     <input type = "submit" name = "submit" value = "UPDATE" class="btn btn-success">
+		     <input type = "submit" name = "submit" value = "DELETE" class="btn btn-success">
 		    
 		</div>
 		

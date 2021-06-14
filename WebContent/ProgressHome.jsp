@@ -11,13 +11,13 @@ pageEncoding="ISO-8859-1"%>
 	<head>
  		<link rel="stylesheet" type="text/css" href="styles/main.css">
 		<meta charset="ISO-8859-1">
-		<center>
+		 <center>
 		<title>Monthly Training Progress Management</title>
 	</head>
 	<body>
 		<jsp:include page="/ProgressCommonLayout.jsp"></jsp:include>
 		<div class ="main">
-		
+		    
 			<h1>Add / Search Score Details</h1><br><br>
 			
 			<form action="viewmarks" method="post">

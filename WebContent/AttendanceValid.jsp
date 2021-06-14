@@ -11,9 +11,14 @@
 
 <body>
 	<jsp:include page="/AttendanceCommonLayout.jsp"></jsp:include>
+	<br>
+	<h4>VIEW ATTENDANCE</h4>
 			
 	<div class = "main">
 	
+	
+		<br>
+		
 		
 		<div class="row">
 		
@@ -28,7 +33,7 @@
 			</div>
 			
 			<div class="col">
-			<form action="#" method ="post">
+			<form action="SearchAttendanceByIdServlet" method ="post">
 				
 					Athlete ID<input type ="text" name="ElementName"> 
 					<input type="submit" name="submit" value="Search" class="btn btn-info"> 
@@ -39,11 +44,16 @@
 			
 		</div>
 		
+		<br>
+		<br>
 		
 		<div class="row">
-		<form action="AttendanceViewServlet" method="POST"><button class="btn btn-success">View All</button></form>
+	
+		<div class="col" style="margin-left:35%">
+		<form action="AttendanceViewServlet" method="POST"><button class="btn btn-success">View All Attendance</button></form>
 		
 		</div>
+		
 	</div>
 	
 </body>
