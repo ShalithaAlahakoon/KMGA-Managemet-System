@@ -213,6 +213,26 @@
          	<servlet-name>EvaluationPage</servlet-name>
          	<url-pattern>/EvaluationPage</url-pattern>
          </servlet-mapping>
+       <!-- EvaluationDetailsPage -->
+         <servlet>
+         	<servlet-name>EvaluationDetailsPage</servlet-name>
+         	<servlet-class>controller.EvaluationDetailsPageServelet</servlet-class>
+         </servlet>
+         
+         <servlet-mapping>
+         	<servlet-name>EvaluationDetailsPage</servlet-name>
+         	<url-pattern>/EvaluationDetailsPage</url-pattern>
+         </servlet-mapping>
+       <!-- addScore Page -->
+         <servlet>
+         	<servlet-name>AddScorePage</servlet-name>
+         	<servlet-class>controller.SendScoreDetailsServlet</servlet-class>
+         </servlet>
+         
+         <servlet-mapping>
+         	<servlet-name>AddScorePage</servlet-name>
+         	<url-pattern>/AddScorePage</url-pattern>
+         </servlet-mapping>
 	 
   	<!-- Add new Score -->
          <servlet>

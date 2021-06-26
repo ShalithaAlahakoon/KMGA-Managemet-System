@@ -21,8 +21,9 @@ public class viewScoreServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
        
  
-	String progressId = request.getParameter("search");
+	String progressId = request.getParameter("id");
 	
+	System.out.println("from viewScoreServlet = "+progressId);
 	
 	try {
 		
@@ -31,6 +32,15 @@ public class viewScoreServlet extends HttpServlet {
 				
 		request.setAttribute("details", answer);
 		
+		for (Score score : answer) {
+			System.out.println("from view score servelet = " + score.getAthId());
+			System.out.println("from view score servelet = " + score.getEleId());
+			System.out.println("from view score servelet = " + score.getEvaluation());
+			System.out.println("from view score servelet = " + score.getEveId());
+			System.out.println("from view score servelet = " + score.getMarks());
+			System.out.println("from view score servelet = " + score.getProId());
+		}
+			
 		
 		RequestDispatcher redD = request.getRequestDispatcher("viewScore.jsp");
 		redD.forward(request, response);

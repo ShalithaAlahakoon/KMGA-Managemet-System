@@ -21,10 +21,7 @@
 			<th>Evaluation</th>
 			<th>Score</th>
 			<th></th>
-			
-			
-			
-			
+
 		</tr>
 			<%
 			String id = (String)request.getAttribute("athleteID");
@@ -41,11 +38,13 @@
 		
 			<td><%=score.getEvaluation() %></td>
 			<td> <%=score.getMarks() %></td>
-			<td> <form action="#" method="post"> 
-								<input type="submit" value= "VIEW" class="btn btn-primary">
-								<input type="hidden" value= "<%=score.getEvaluation() %>" name="id" id="id">
-								
-								</form></td>
+			<td> 	
+				<form action="EvaluationDetailsPage" method="post"> 
+					<input type="submit" value= "VIEW" class="btn btn-primary">
+					<input type="hidden" value= "<%=score.getEvaluation() %>" name="Evaluation" id="Evaluation">
+					<input type="hidden" value= "<%=id %>" name="Athleteid" id="Athleteid">
+				</form>
+			</td>
 			
 			
 			
@@ -57,7 +56,17 @@
 		
 		
 		
+		
+		
+		
 	</div>
+		<%if(ProgressDetails.isEmpty()){%>
+				<form action="EvaluationDetailsPage" method="post"> 
+					<input type="submit" value= "ADD NEW RECORD" class="btn btn-primary">
+					<input type="hidden" value= "<%=id %>" name="Athleteid" id="Athleteid">
+				</form>	
+		
+		<% } %>
 	</div>
 </body>
 </html>

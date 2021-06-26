@@ -203,8 +203,7 @@
 		<tr>
 			<th>Evaluation</th>
 			<th>Score</th>
-			<th>Event ID</th>
-			<th>Element ID</th>
+			
 			
 			
 			
@@ -224,8 +223,7 @@
 		
 			<td><%=score.getEvaluation() %></td>
 			<td> <%=score.getMarks() %></td>
-			<td> <%=EventDBUtill.getEventNameById(score.getEveId())%></td>
-			<td><%=EventDBUtill.getElementNameById(score.getEleId())%></td>
+			
 			
 			
 		</tr>

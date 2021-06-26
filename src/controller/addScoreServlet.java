@@ -22,7 +22,7 @@ public class addScoreServlet extends HttpServlet {
 		String AthleteID = request.getParameter("AthleteID");
 		String EventID = request.getParameter("EventID");
 		String ElemetID = request.getParameter("ElemetID");
-		String ProgressID = request.getParameter("ProgressID");
+		
 		String Evalution = request.getParameter("Evalution");
 		float Score = Float.parseFloat(request.getParameter("Score"));
 		
@@ -36,7 +36,7 @@ public class addScoreServlet extends HttpServlet {
 		try {
 			
 
-            answer = ScoreDBUtill.addScore(ProgressID,Evalution,Score,EventID,ElemetID,AthleteID);
+            answer = ScoreDBUtill.addScore(Evalution,Score,EventID,ElemetID,AthleteID);
 			
 			if(answer == true) {
 				

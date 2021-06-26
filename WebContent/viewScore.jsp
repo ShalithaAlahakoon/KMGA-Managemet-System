@@ -1,3 +1,6 @@
+<%@page import="java.util.*"%>
+<%@page import="model.*"%>
+<%@page import="DBUtill.*"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
      <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -39,7 +42,7 @@
 					</tr>
 					 <tr>
 						<td>Evaluation :  </td>
-						<td><input type ="text" name="evaluation" value="${evaluation}"><br> </td>
+						<td><input type ="text" name="evaluation" value="${evaluation}" readonly><br> </td>
 					</tr>
 					<tr>
 						<td>Score :  </td>
@@ -47,11 +50,35 @@
 					</tr>
 					<tr>
 						<td>Event ID :  </td>
-						<td><input type ="text" name="eveId" value="${eveId}"  readonly>  <br> </td>
+						
+						<td>
+							<select id="eveId" name="eveId" REQUIRED>
+							<option value="${eveId}" selected>${eveId}</option>
+							
+							<% List<Event> event = EventDBUtill.getEvent();
+							
+							for(Event e : event){ %>
+								 <option value="<%=e.getEventId()%>"><%=e.getEventName()%></option>
+							<%} %>
+	
+							</select>
+						</td>
 					</tr>
 					<tr>	
 						<td>Element ID : </td>
-						<td><input type ="text" name="eleId" value="${eleId}"readonly> <br> </td>
+						
+						<td><select id="eleId" name="eleId" REQUIRED>
+						
+						
+							<option value="${eleId}" selected>${eleId}</option>
+							
+						<% List<Element> eliment = EventDBUtill.getElement();
+						
+						for(Element e : eliment){ %>
+							 <option value="<%=e.getElementId()%>"><%=e.getElementName()%></option>
+						<%} %>
+
+						</select></td>
 					</tr>	
 					<tr>
 						<td>Athlete ID : </td>
