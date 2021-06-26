@@ -1,5 +1,5 @@
 <%@page import="java.util.*"%>
-<%@page import="model.Score"%>
+<%@page import="model.*"%>
 <%@page import="DBUtill.*"%>
 
 
@@ -17,7 +17,11 @@ pageEncoding="ISO-8859-1"%>
 	<body>
 		<jsp:include page="/ProgressCommonLayout.jsp"></jsp:include>
 		<div class ="main">
+<<<<<<< Upstream, based on origin/shalitha-alahakoon
 		    
+=======
+	<!-- view Score 
+>>>>>>> b0daab2 Eavaluation page added to TRAINING PROGRESS MANAGEMENT changed inter face
 			<h1>Add / Search Score Details</h1><br><br>
 			
 			<form action="viewmarks" method="post">
@@ -26,7 +30,6 @@ pageEncoding="ISO-8859-1"%>
 				<button type="submit" class="button btn-lg"><i></i><span>Search</span></button> 					
 			</form>
 			<br> <br>
-			
 			<table style="width:80%" class="table table-striped">
 		
 				<tr>					
@@ -62,8 +65,40 @@ pageEncoding="ISO-8859-1"%>
 								
 				<a href="addScore.jsp"><button type ="submit" class="button btn-lg"><span> Add Score</span> </button></a>
 			
-											
-		</div>
-
+				-->							
+		
+		<table class="table ">
+				
+					<tr>
+						<TH>ATHLETE ID</TH>
+						<TH>FULL NAME</TH>
+						<TH>VIEW</TH>
+						
+					
+		            </tr>
+		             <%
+		             	
+		                List<Athlete> athleteList = AthleteDBUtill.getAthletes();
+		                                       
+		                                      
+		                          	
+		                          	for(Athlete athlete : athleteList){
+		             %>
+					 <tr>
+						<td> <%=athlete.getAthleteID() %> </td>
+						<td> <%=athlete.getFullName()%> </td>
+						<td><form action="EvaluationPage" method="post"> 
+								<input type="submit" value= "VIEW" class="btn btn-primary">
+								<input type="hidden" value= "<%=athlete.getAthleteID() %>" name="id" id="id">
+								
+								</form> </td>
+			
+					</tr>			
+					<%	
+					   }
+		            %> 
+		            
+			</table>
+	</div>
 	</body>
 </html>

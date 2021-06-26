@@ -22,6 +22,12 @@ public class Score {
 	}
 	
 	
+	public Score(String evaluation2, float scores) {
+		this.evaluation = evaluation2;
+		this.marks = scores;
+	}
+
+
 	public String getProId() {
 		return proId;
 	}

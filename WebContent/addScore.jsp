@@ -1,3 +1,7 @@
+<%@page import="java.util.*"%>
+<%@page import="model.*"%>
+<%@page import="DBUtill.*"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -34,12 +38,24 @@ pageEncoding="ISO-8859-1"%>
 						 <td><label for="Score">Enter Score:</label></td>
 						<td><input type ="text" name="Score" placeholder="Enter Score" required></td>
 					 </tr>	
+					 
 						<td><label for="EventID">Enter Event Id:</label> </td>
 						<td><input type ="text" name="EventID" placeholder="Enter Event Id" required></td>
 					 <tr>
 						
-						<td><label for="ElemetID">Enter Element Id:</label> </td>
-						<td><input type ="text" name="ElemetID" placeholder="Enter Element Id" required></td>
+						<td><label for="ElemetID">Enter Element:</label> </td>
+						<td><select id="event" name="ElemetID" REQUIRED>
+						
+						
+							<option value="#" selected>--SELECT--</option>
+							
+						<% List<Element> eliment = EventDBUtill.getElement();
+						
+						for(Element e : eliment){ %>
+							 <option value="<%=e.getElementId()%>"><%=e.getElementName()%></option>
+						<%} %>
+
+						</select></td>
 					 </tr>
 					 <tr>
 						<td><label for="AthleteID">Enter Athlete Id:</label> </td>

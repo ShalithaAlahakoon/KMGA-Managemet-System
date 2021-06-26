@@ -402,26 +402,26 @@ ArrayList<schedule> Schedule = new ArrayList<>();
 }
 
 public static ArrayList<Score> getAthleteProgressById(String id) {
-	System.out.println("Id recived = " + id);
+	System.out.println("Id recived in AthleteDBUtill = " + id);
 	ArrayList<Score> score = new ArrayList<>();
 try {
 		
 		con = DBConnect.getConnection();
 		stmt = con.createStatement();
-		String sql = "select * from kmga.progress where AthleteID = '"+id+"'";
+		String sql = "select  p.Evalution,  round(sum(Score),3) from progress p where p.AthleteID = '"+id+"'  group by p.Evalution order by p.Evalution";
 		rs = stmt.executeQuery(sql);
 		
 		while (rs.next()) {
-			String progressID = rs.getString(1);
-			String evaluation = rs.getString(2);
-			float scores = rs.getFloat(3);
-			String eventID = rs.getString(4);
-			String elementID = rs.getString(5);
-			String athleteID= rs.getString(6);
+			//String progressID = rs.getString(1);
+			String evaluation = rs.getString(1);
+			float scores = rs.getFloat(2);
+//			String eventID = rs.getString(4);
+//			String elementID = rs.getString(5);
+//			String athleteID= rs.getString(6);
 			
-			System.out.println(athleteID);
+			//System.out.println(athleteID);
 			
-			Score obj = new Score(progressID, evaluation, scores,eventID,elementID,athleteID);
+			Score obj = new Score(evaluation, scores);
 			score.add(obj);
 			
 			
