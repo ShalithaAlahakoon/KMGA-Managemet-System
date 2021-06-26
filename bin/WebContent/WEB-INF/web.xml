@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+      <!-- LOGIN -->    
+	 <servlet>
+	 	<servlet-name>login</servlet-name>
+	 	<servlet-class>controller.logingServlet</servlet-class>
+	 </servlet>   
+	 
+	 <servlet-mapping>
+	 	<servlet-name>login</servlet-name>
+	 	<url-pattern>/log</url-pattern>
+	 </servlet-mapping>    
+	 <!-- Athlete -->
+	 <!-- athleteInsert --> 
+	 <servlet>
+    	<servlet-name>athleteinsert</servlet-name>
+    	<servlet-class>controller.AthleteInsertServelet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>athleteinsert</servlet-name>
+    	<url-pattern>/athleteInsert</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+    	<servlet-name>viewAthlete</servlet-name>
+    	<servlet-class>controller.AthleteProfileServelet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>viewAthlete</servlet-name>
+    	<url-pattern>/viewAthlete</url-pattern>
+    </servlet-mapping>
+	  
+	 <servlet>
+    	<servlet-name>deleteAthlete</servlet-name>
+    	<servlet-class>controller.DeleteAthleteProfileServelet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>deleteAthlete</servlet-name>
+    	<url-pattern>/deleteAthlete</url-pattern>
+    </servlet-mapping>
+	  
+	 <servlet>
+    	<servlet-name>updateAthlete</servlet-name>
+    	<servlet-class>controller.UpdateAthleteServelet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>updateAthlete</servlet-name>
+    	<url-pattern>/updateAthlete</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+    	<servlet-name>updateAthlete2</servlet-name>
+    	<servlet-class>controller.UpdateAthlete2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>updateAthlete2</servlet-name>
+    	<url-pattern>/updateAthlete2</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+    	<servlet-name>athleteReport</servlet-name>
+    	<servlet-class>controller.AthleteReportServelet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>athleteReport</servlet-name>
+    	<url-pattern>/athleteReport</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+    	<servlet-name>addAchivement</servlet-name>
+    	<servlet-class>controller.AddAchivementServelet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>addAchivement</servlet-name>
+    	<url-pattern>/addAchivement</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+    	<servlet-name>SaveAchivement</servlet-name>
+    	<servlet-class>controller.SaveAchivmentServelet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>SaveAchivement</servlet-name>
+    	<url-pattern>/SaveAchivement</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+    	<servlet-name>addEvent</servlet-name>
+    	<servlet-class>controller.AddEventToAthleteServelet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>addEvent</servlet-name>
+    	<url-pattern>/addEvent</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+    	<servlet-name>AddScheduleToAthlete</servlet-name>
+    	<servlet-class>controller.AddScheduleToAthleteServelet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>AddScheduleToAthlete</servlet-name>
+    	<url-pattern>/AddScheduleToAthlete</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+    	<servlet-name>SaveScheduleToAthlete</servlet-name>
+    	<servlet-class>controller.SaveScheduleToAtheletServelet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>SaveScheduleToAthlete</servlet-name>
+    	<url-pattern>/SaveScheduleToAthlete</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+    	<servlet-name>SaveEventToAthlete</servlet-name>
+    	<servlet-class>controller.SaveEventToAthleteServelet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>SaveEventToAthlete</servlet-name>
+    	<url-pattern>/SaveEventToAthlete</url-pattern>
+    </servlet-mapping>
+     <!-- Event -->
+    <servlet>
+  	<servlet-name>ViewEvent</servlet-name>
+  	<servlet-class>controller.HomeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ViewEvent</servlet-name>
+  	<url-pattern>/viewEvent</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+  	<servlet-name>ViewElement</servlet-name>
+  	<servlet-class>controller.ViewElmntServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ViewElement</servlet-name>
+  	<url-pattern>/viewEl</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  	<servlet-name>InsertEvent</servlet-name>
+  	<servlet-class>controller.EventInsert</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>InsertEvent</servlet-name>
+  	<url-pattern>/insert</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>AssinElement</servlet-name>
+  	<servlet-class>controller.AssinElementServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>AssinElement</servlet-name>
+  	<url-pattern>/assinEl</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+  	<servlet-name>InsertElement</servlet-name>
+  	<servlet-class>controller.ElementInsertServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>InsertElement</servlet-name>
+  	<url-pattern>/insertEl</url-pattern>
+  </servlet-mapping>
+  
+  
+    <servlet>
+  	<servlet-name>UpdateEvent</servlet-name>
+  	<servlet-class>controller.UpdateEventServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>UpdateEvent</servlet-name>
+  	<url-pattern>/updateE</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+  	<servlet-name>UpdateElement</servlet-name>
+  	<servlet-class>controller.UpdateElementServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>UpdateElement</servlet-name>
+  	<url-pattern>/updateEl</url-pattern>
+  </servlet-mapping>
+  
+
+  
+   <!-- Equipment -->
+  
+      <servlet>
+    	<servlet-name>insertEquipment</servlet-name>
+    	<servlet-class>equipment.InsertEQServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>insertEquipment</servlet-name>
+    	<url-pattern>/addEq</url-pattern>
+    </servlet-mapping>
+	 <!-- Progress -->
+	 	<servlet>
+         	<servlet-name>EvaluationPage</servlet-name>
+         	<servlet-class>controller.EvaluationPageServlet</servlet-class>
+         </servlet>
+         
+         <servlet-mapping>
+         	<servlet-name>EvaluationPage</servlet-name>
+         	<url-pattern>/EvaluationPage</url-pattern>
+         </servlet-mapping>
+       <!-- EvaluationDetailsPage -->
+         <servlet>
+         	<servlet-name>EvaluationDetailsPage</servlet-name>
+         	<servlet-class>controller.EvaluationDetailsPageServelet</servlet-class>
+         </servlet>
+         
+         <servlet-mapping>
+         	<servlet-name>EvaluationDetailsPage</servlet-name>
+         	<url-pattern>/EvaluationDetailsPage</url-pattern>
+         </servlet-mapping>
+       <!-- addScore Page -->
+         <servlet>
+         	<servlet-name>AddScorePage</servlet-name>
+         	<servlet-class>controller.SendScoreDetailsServlet</servlet-class>
+         </servlet>
+         
+         <servlet-mapping>
+         	<servlet-name>AddScorePage</servlet-name>
+         	<url-pattern>/AddScorePage</url-pattern>
+         </servlet-mapping>
+	 
+  	<!-- Add new Score -->
+         <servlet>
+         	<servlet-name>AddNewSco</servlet-name>
+         	<servlet-class>controller.addScoreServlet</servlet-class>
+         </servlet>
+         
+         <servlet-mapping>
+         	<servlet-name>AddNewSco</servlet-name>
+         	<url-pattern>/addscore</url-pattern>
+         </servlet-mapping>
+         
+         
+    <!-- view Score -->
+         <servlet>
+         	<servlet-name>viewScore</servlet-name>
+         	<servlet-class>controller.viewScoreServlet</servlet-class>
+         </servlet>
+         
+         <servlet-mapping>
+         	<servlet-name>viewScore</servlet-name>
+         	<url-pattern>/viewmarks</url-pattern>
+         </servlet-mapping>
+         
+         
+    <!-- Update Score -->
+         <servlet>
+         	<servlet-name>updateScore</servlet-name>
+         	<servlet-class>controller.updateScoreServlet</servlet-class>
+         </servlet>
+         
+         <servlet-mapping>
+         	<servlet-name>updateScore</servlet-name>
+         	<url-pattern>/updatescore</url-pattern>
+         </servlet-mapping>
+         
+         
+     <!-- delete score -->
+          <servlet>
+         	<servlet-name>deleteSco</servlet-name>
+         	<servlet-class>controller.deleteScoreServlet</servlet-class>
+         </servlet>
+         
+         <servlet-mapping>
+         	<servlet-name>deleteSco</servlet-name>
+         	<url-pattern>/deletescore</url-pattern>
+         </servlet-mapping>
+         
+         
+     <!-- Generate Report -->
+          <servlet>
+         	<servlet-name>Report</servlet-name>
+         	<servlet-class>controller.progressReportServlet</servlet-class>
+         </servlet>
+         
+         <servlet-mapping>
+         	<servlet-name>Report</servlet-name>
+         	<url-pattern>/progressReport</url-pattern>
+         </servlet-mapping>
+         
+         <servlet>
+		  	<servlet-name>DeleteEvent</servlet-name>
+		  	<servlet-class>controller.DeleteEventServlet</servlet-class>
+		  </servlet>
+		  <servlet-mapping>
+		  	<servlet-name>DeleteEvent</servlet-name>
+		  	<url-pattern>/deleteE</url-pattern>
+		  </servlet-mapping>
+		  
+		  <servlet>
+		  	<servlet-name>DeleteElement</servlet-name>
+		  	<servlet-class>controller.DeleteElementServlet</servlet-class>
+		  </servlet>
+		  <servlet-mapping>
+		  	<servlet-name>DeleteElement</servlet-name>
+		  	<url-pattern>/deleteEl</url-pattern>
+		  </servlet-mapping>
+  
+  
+  			<servlet>
+		<servlet-name>insertCompetition</servlet-name>
+		<servlet-class>controller.AddCompetitionServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>insertCompetition</servlet-name>
+		<url-pattern>/insertComp</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>viewCompetitionDetails</servlet-name>
+		<servlet-class>controller.SearchCmpServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>viewCompetitionDetails</servlet-name>
+		<url-pattern>/viewComp</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>updateCompetitionDetails</servlet-name>
+		<servlet-class>controller.UpdateCompetitionServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>updateCompetitionDetails</servlet-name>
+		<url-pattern>/updateComp</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>deleteCompetitionDetails</servlet-name>
+		<servlet-class>controller.DeleteCompetitionServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>deleteCompetitionDetails</servlet-name>
+		<url-pattern>/deleteComp</url-pattern>
+	</servlet-mapping>
+	
+	
+		<!-- Add new Schedule -->
+         <servlet>
+         	<servlet-name>Create_TS_servelet</servlet-name>
+         	<servlet-class>controller.Create_TS_servelet</servlet-class> 
+         </servlet>
+         
+         <servlet-mapping>
+         	<servlet-name>Create_TS_servelet</servlet-name>
+         	<url-pattern>/addSchedule</url-pattern>
+         </servlet-mapping>
+         
+     <!-- VIEW SCHEDULE -->
+         <servlet>
+         	<servlet-name>AthleteVservlet</servlet-name>
+         	<servlet-class>controller.AthleteVservlet</servlet-class> 
+         </servlet>
+         
+         <servlet-mapping>
+         	<servlet-name>AthleteVservlet</servlet-name>
+         	<url-pattern>/view</url-pattern>
+         </servlet-mapping>    	
+         
+     <!-- UPDATE SCHEDULE -->
+         <servlet>
+         	<servlet-name>UpdateScheduleServelet</servlet-name>
+         	<servlet-class>controller.UpdateScheduleServelet</servlet-class> 
+         </servlet>
+         
+         <servlet-mapping>
+         	<servlet-name>UpdateScheduleServelet</servlet-name>
+         	<url-pattern>/update</url-pattern>
+         </servlet-mapping>    	
+      
+     <!-- DELETE SCHEDULE -->
+         <servlet>
+         	<servlet-name>DeleteScheduleServlet</servlet-name>
+         	<servlet-class>controller.DeleteScheduleServlet</servlet-class> 
+         </servlet>
+         
+         <servlet-mapping>
+         	<servlet-name>DeleteScheduleServlet</servlet-name>
+         	<url-pattern>/delete</url-pattern>
+         </servlet-mapping>  
+         
+          <!-- financeInsert -->
+         <servlet>
+         	<servlet-name>financeInsert</servlet-name>
+         	<servlet-class>controller.InsertFinanceServlet</servlet-class>
+         </servlet>
+   		 <servlet-mapping>
+   		 	<servlet-name>financeInsert</servlet-name>
+   		 	<url-pattern>/insertRecords</url-pattern>
+   		 </servlet-mapping>
+
+
+		<!-- UpdateFinance -->
+         <servlet>
+         	<servlet-name>UpdateFinance</servlet-name>
+         	<servlet-class>controller.UpdateFinanceServlet</servlet-class>
+         </servlet>
+         <servlet-mapping>
+         <servlet-name>UpdateFinance</servlet-name>
+         <url-pattern>/updateFinance</url-pattern>
+         </servlet-mapping>
+
+
+		<!-- DeleteFinance -->
+         <servlet>
+         	<servlet-name>DeleteFinance</servlet-name>
+         	<servlet-class>controller.DeleteFinanceServlet</servlet-class>
+         </servlet>
+         <servlet-mapping>
+         <servlet-name>DeleteFinance</servlet-name>
+         <url-pattern>/deleteFinance</url-pattern>
+         </servlet-mapping>
+         <servlet>
+    <servlet-name>insertLocation</servlet-name>
+    <servlet-class>controller.InsertLocationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>insertLocation</servlet-name>
+    <url-pattern>/addLocation</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>updateLocation</servlet-name>
+    <servlet-class>controller.UpdateLocationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>updateLocation</servlet-name>
+    <url-pattern>/updateLoc</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>deleteLocation</servlet-name>
+    <servlet-class>controller.DeleteLocationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>deleteLocation</servlet-name>
+    <url-pattern>/deleteLoc</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>viewLocationDetails</servlet-name>
+    <servlet-class>controller.ViewLocationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>viewLocationDetails</servlet-name>
+    <url-pattern>/viewLoc</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>insertEquipments</servlet-name>
+    <servlet-class>controller.InsertEquipmentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>insertEquipments</servlet-name>
+    <url-pattern>/insertEQ</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>updateEquipment</servlet-name>
+    <servlet-class>controller.UpdateEquipmentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>updateEquipment</servlet-name>
+    <url-pattern>/updateEQ</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>deleteEquipment</servlet-name>
+    <servlet-class>controller.DeleteEquipmentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>deleteEquipment</servlet-name>
+    <url-pattern>/deleteEQ</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>viewEquipmentDetails</servlet-name>
+    <servlet-class>controller.ViewEquipmentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>viewEquipmentDetails</servlet-name>
+    <url-pattern>/viewEQ</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>assignEquipment</servlet-name>
+    <servlet-class>controller.AssignEquipmentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>assignEquipment</servlet-name>
+    <url-pattern>/assignEQ</url-pattern>
+  </servlet-mapping>
+         
+ </web-app>
+  
