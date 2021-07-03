@@ -10,6 +10,7 @@ import model.EventElement;
 import java.sql.Connection;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 
@@ -93,7 +94,7 @@ public class EventDBUtill {
 	
 	
 	//insert event
-	public static boolean insertevent(String eventId, String eventName, String eventSymbol, String Category) {
+	public static boolean insertevent( String eventName, String eventSymbol, String Category) {
 		
 		boolean isSuccess = false;
 		
@@ -102,7 +103,7 @@ public class EventDBUtill {
 			con = DBConnect.getConnection();
 			stmt = con.createStatement();
 			
-			String sql = "insert into event values ('"+eventId+"','"+eventName+"','"+eventSymbol+"','"+Category+"')";
+			String sql = "insert into event values ('"+getEventid()+"','"+eventName+"','"+eventSymbol+"','"+Category+"')";
 			int rs = stmt.executeUpdate(sql);
 					
 				if(rs > 0) {
@@ -147,7 +148,7 @@ public class EventDBUtill {
 	}
 
 	//insert element
-	public static boolean insertelement(String elementId, String elementName, String value,String eventId) {
+	public static boolean insertelement( String elementName, String value,String eventId) {
 	
 	boolean isSuccess = false;
 	
@@ -158,7 +159,7 @@ public class EventDBUtill {
 		con = DBConnect.getConnection();
 		stmt = con.createStatement();
 		
-		String sql = "insert into element values ('"+elementId+"','"+elementName+"','"+value+"' )" ;
+		String sql = "insert into element values ('"+getElementId()+"','"+elementName+"','"+value+"' )" ;
 		
 		int rs = stmt.executeUpdate(sql);
 				
@@ -178,6 +179,7 @@ public class EventDBUtill {
 	
 	
 	
+
 	//update event
 	public static boolean updateevent(String EventId, String EventName, String EventSymbol, String Category) {
 		
@@ -424,5 +426,76 @@ public class EventDBUtill {
 			return isSuccess;
 			
 		}
-	
+		
+		private static java.lang.String getEventid() {
+					
+					int count = 0;
+					
+						
+			try {
+						con = DBConnect.getConnection();
+						stmt = con.createStatement();
+						String sql = "select count from kmga.event_count;";
+						rs = stmt.executeQuery(sql);
+							if(rs.next()) {
+								 count = rs.getInt(1);
+							}
+						} catch (SQLException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						++count;
+						if(count<10) {
+							return "E000"+count;	
+						}
+						else if (count<100 ) {
+							return "E00"+count;
+							
+						}
+						else if (count<1000 ) {
+							return "E0"+count;
+							
+						}
+						
+						else {
+							return "E"+count;
+						}
+				}
+
+		private static String getElementId() {
+			
+					int count = 0;
+					
+						
+			try {
+						con = DBConnect.getConnection();
+						stmt = con.createStatement();
+						String sql = "select count from kmga.element_count;";
+						rs = stmt.executeQuery(sql);
+							if(rs.next()) {
+								 count = rs.getInt(1);
+							}
+						} catch (SQLException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						++count;
+						if(count<10) {
+							return "EL000"+count;	
+						}
+						else if (count<100 ) {
+							return "EL00"+count;
+							
+						}
+						else if (count<1000 ) {
+							return "EL0"+count;
+							
+						}
+						
+						else {
+							return "EL"+count;
+						}
+				}
+
 }
+
