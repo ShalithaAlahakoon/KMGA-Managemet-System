@@ -1,8 +1,7 @@
 package controller;
 
-import static java.lang.System.out;
-
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -30,19 +29,24 @@ public class logingServlet extends HttpServlet {
 		boolean isTrue;
 		
 		isTrue = AdminDBUtill.validate(username,pass);
-	
+		
+		//this statement for write java script code to display pop up message
+				PrintWriter set = response.getWriter();
+				response.setContentType("text/html");
 
 		if (isTrue == true) {
 			List<Admin> adminDetails = AdminDBUtill.getAdmin(username);
 			request.setAttribute("adminDetails", adminDetails);
 			
+			
 			RequestDispatcher dis = request.getRequestDispatcher("adminPage.jsp");
 			dis.forward(request, response);
+			
 		} else {
-			out.println("<script type='text/javascript'>");
-			out.println("alert('Your username or password is incorrect');");
-			out.println("location='logingPage.jsp'");
-			out.println("</script>");
+			set.println("<script type='text/javascript'>");
+			set.println("alert('Your username or password is incorrect');");
+			set.println("location='logingPage.jsp'");
+			set.println("</script>");
 			RequestDispatcher dis = request.getRequestDispatcher("logingPage.jsp");
 			dis.forward(request, response);
 		}

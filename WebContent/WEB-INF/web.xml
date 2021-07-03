@@ -151,7 +151,7 @@
   </servlet>
   <servlet-mapping>
   	<servlet-name>InsertEvent</servlet-name>
-  	<url-pattern>/insert</url-pattern>
+  	<url-pattern>/insertEvent</url-pattern>
   </servlet-mapping>
   
   <servlet>

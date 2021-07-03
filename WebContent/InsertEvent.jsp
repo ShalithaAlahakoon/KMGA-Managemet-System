@@ -14,16 +14,13 @@
 	
 	<h4>ADD NEW EVENT</h4>
 	
-	<form action="insert" method="post">
+	<form action="insertEvent" method="post">
 	<div class="row">
 		<div class="col-sm-3"></div>
 		
 		<div class="col-sm-6">
 		
-			<div class="row">
-				<div class="col">Event ID </div>
-				<div class="col"><input type="text" name="eventId" required></div>
-			</div>
+			
 			<div class="row">
 				<div class="col">Event Name </div>
 				<div class="col"><input type="text" name="eventName" required></div>

@@ -79,9 +79,7 @@ pageEncoding="ISO-8859-1"%>
 		             <%
 		             	
 		                List<Athlete> athleteList = AthleteDBUtill.getAthletes();
-		                                       
-		                                      
-		                          	
+     	
 		                          	for(Athlete athlete : athleteList){
 		             %>
 					 <tr>

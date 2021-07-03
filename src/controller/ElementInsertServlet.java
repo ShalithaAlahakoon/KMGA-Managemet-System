@@ -19,7 +19,7 @@ public class ElementInsertServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String elementId = request.getParameter("elementId");
+		
 		String elementName = request.getParameter("elementName");
 		String value =request.getParameter("value");
 		String eventId = request.getParameter("eventId");
@@ -28,7 +28,7 @@ public class ElementInsertServlet extends HttpServlet {
 		
 		boolean isTrue;
 		
-		isTrue = EventDBUtill.insertelement(elementId, elementName, value,eventId);
+		isTrue = EventDBUtill.insertelement( elementName, value,eventId);
 		
 		if(isTrue == true) {
 			RequestDispatcher dis = request.getRequestDispatcher("AllElementDetails.jsp");
