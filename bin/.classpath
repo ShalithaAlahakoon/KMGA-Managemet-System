@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path=""/>
+	<classpathentry kind="lib" path="E:/documents/2021/KMGA-Managemet-System/WebContent/lib/jakarta.servlet.jsp.jstl-api-2.0.0-RC1.jar"/>
+	<classpathentry kind="lib" path="E:/documents/2021/KMGA-Managemet-System/WebContent/lib/javax.servlet-3.1.jar"/>
+	<classpathentry kind="lib" path="E:/documents/2021/KMGA-Managemet-System/WebContent/lib/jstl-1.2.jar"/>
+	<classpathentry kind="lib" path="E:/documents/2021/KMGA-Managemet-System/WebContent/lib/jstl-api-1.2.jar"/>
+	<classpathentry kind="lib" path="E:/documents/2021/KMGA-Managemet-System/WebContent/lib/junit-4.13.jar"/>
+	<classpathentry kind="lib" path="E:/documents/2021/KMGA-Managemet-System/WebContent/lib/mysql-connector-java-5.1.48.jar"/>
+	<classpathentry kind="lib" path="E:/documents/2021/KMGA-Managemet-System/WebContent/lib/mysql-connector-java-5.1.48-bin.jar"/>
+	<classpathentry kind="lib" path="E:/documents/2021/KMGA-Managemet-System/WebContent/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="E:/documents/2021/KMGA-Managemet-System/WebContent/lib/servlet-api.jar.zip"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

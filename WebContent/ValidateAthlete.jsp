@@ -1,6 +1,6 @@
 <%@page import="java.util.*"%>
-<%@page import="model.schedule"%>
-<%@page import="DBUtill.AthleteTrainigScheduleDBUtil"%>
+<%@page import="model.*"%>
+<%@page import="DBUtill.*"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -35,10 +35,9 @@
 				</tr>
 					
 					<%
-											List<schedule> scheduleList = AthleteTrainigScheduleDBUtil.getschedule();
-													
-													for(schedule schd : scheduleList){
-										%>
+						List<schedule> scheduleList = AthleteTrainigScheduleDBUtil.getschedule();
+							for(schedule schd : scheduleList){
+					%>
 					
 				<tr>
 						<td><%=schd.getIdschedule() %></td>
@@ -57,6 +56,37 @@
 					}
 					%>
 </table>
+
+				<table class="table ">
+				
+					<tr>
+						<TH>ATHLETE ID</TH>
+						<TH>FULL NAME</TH>
+						<TH>VIEW</TH>
+						
+					
+		            </tr>
+		             <%
+		             	
+		                List<Athlete> athleteList = AthleteDBUtill.getAthletes();
+     	
+		                          	for(Athlete athlete : athleteList){
+		             %>
+					 <tr>
+						<td> <%=athlete.getAthleteID() %> </td>
+						<td> <%=athlete.getFullName()%> </td>
+						<td><form action="#" method="post"> 
+								<input type="submit" value= "VIEW" class="btn btn-primary">
+								<input type="hidden" value= "<%=athlete.getAthleteID() %>" name="id" id="id">
+								
+								</form> </td>
+			
+					</tr>			
+					<%	
+					   }
+		            %> 
+		            
+			</table>
 	
 </div>
 </body>

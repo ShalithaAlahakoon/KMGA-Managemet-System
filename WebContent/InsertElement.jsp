@@ -20,10 +20,7 @@
 		
 		<div class="col-sm-6">
 		
-			<div class="row">
-				<div class="col">Element ID</div>
-				<div class="col"><input type="text" name="elementId" required></div>
-			</div>
+			
 			<div class="row">
 				<div class="col">Element Name </div>
 				<div class="col"><input type="text" name="elementName" required></div>

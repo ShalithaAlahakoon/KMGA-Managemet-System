@@ -21,14 +21,14 @@ public class EventInsert extends HttpServlet {
 		
 		
 		
-		String eventId = request.getParameter("eventId");
+		
 		String eventName = request.getParameter("eventName");
 		String eventSymbol =request.getParameter("eventSymbol");
 		String Category = request.getParameter("category");
 		
 		boolean isTrue;
 		
-		isTrue = EventDBUtill.insertevent(eventId, eventName, eventSymbol, Category);
+		isTrue = EventDBUtill.insertevent( eventName, eventSymbol, Category);
 		
 		if(isTrue == true) {
 			RequestDispatcher dis = request.getRequestDispatcher("AllEventDetails.jsp");

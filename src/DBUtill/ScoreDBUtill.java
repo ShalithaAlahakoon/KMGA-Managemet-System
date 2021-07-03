@@ -3,6 +3,7 @@ package DBUtill;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,8 +14,14 @@ import model.rankProgress;
 
 public class ScoreDBUtill {
 	
+	private static Connection con = null;
+	private static Statement stmt = null;
+	private static ResultSet rs = null;
+	public static boolean isSuccess;
+	
+	
 	//Insert New Athlete Score Details
-	  public static boolean addScore(String ProgressID,String Evalution,float Score,String EventID,String ElemetID,String AthleteID){
+	  public static boolean addScore(String Evalution,float Score,String EventID,String ElemetID,String AthleteID){
 			 boolean ans = false;
 			 
 			 try {
@@ -22,7 +29,7 @@ public class ScoreDBUtill {
 				 
 				 Connection connect = DBConnect.getConnection();
 				 Statement stmt = connect.createStatement();
-				 String sql = "insert into kmga.progress values ('"+ProgressID+"','"+Evalution+"','"+Score+"','"+EventID+"','"+ElemetID+"','"+AthleteID+"' )";
+				 String sql = "insert into kmga.progress values ('"+getid()+"','"+Evalution+"','"+Score+"','"+EventID+"','"+ElemetID+"','"+AthleteID+"' )";
 				 int res = stmt.executeUpdate(sql);
 				 
 				 if(res>0) {
@@ -187,5 +194,81 @@ public class ScoreDBUtill {
 				
 				return rank;
 			}
+			
+				public static List<Score> getEvaluationDetails(String evaluation, String athleteID){
+				
+				ArrayList<Score> Sco = new ArrayList<>();
+				
+				try {
+					
+					 Connection connect = DBConnect.getConnection();
+					 Statement stmt = connect.createStatement();
+					 String sql = "select * from progress p where p.Evalution = '"+evaluation+"' and p.AthleteID = '"+athleteID+"'";
+					 ResultSet rs = stmt.executeQuery(sql);
+					
+					
+					 while(rs.next()) {
+						 String proId = rs.getString(1);
+						 String Evaluation = rs.getString(2);
+						 float marks = rs.getFloat(3);
+						 String eveId = rs.getString(4);
+						 String eleId = rs.getString(5);
+						 String athId = rs.getString(6);
+						 
+						
+						 Score sl = new Score(proId, Evaluation, marks, eveId, eleId, athId);
+						 Sco.add(sl);
+						
+					}
+				}
+				catch(Exception e){
+					e.printStackTrace();
+				}
+				
+				return Sco;
+			}
+				
+	private static java.lang.String getid() {
+					
+					int count = 0;
+					
+						
+			try {
+						con = DBConnect.getConnection();
+						stmt = con.createStatement();
+						String sql = "select count from progress_id_count;";
+						rs = stmt.executeQuery(sql);
+							if(rs.next()) {
+								 count = rs.getInt(1);
+							}
+						} catch (SQLException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						++count;
+						if(count<10) {
+							return "P000"+count;	
+						}
+						else if (count<100 ) {
+							return "P00"+count;
+							
+						}
+						else if (count<1000 ) {
+							return "P0"+count;
+							
+						}
+						
+						else {
+							return "P"+count;
+						}
+						
+					
+					
+						
+					
+					
+				}
+			
+
 
 }

@@ -15,7 +15,7 @@
 	 	<servlet-name>login</servlet-name>
 	 	<url-pattern>/log</url-pattern>
 	 </servlet-mapping>    
-	 
+	 <!-- Athlete -->
 	 <!-- athleteInsert --> 
 	 <servlet>
     	<servlet-name>athleteinsert</servlet-name>
@@ -125,7 +125,7 @@
     	<servlet-name>SaveEventToAthlete</servlet-name>
     	<url-pattern>/SaveEventToAthlete</url-pattern>
     </servlet-mapping>
-    
+     <!-- Event -->
     <servlet>
   	<servlet-name>ViewEvent</servlet-name>
   	<servlet-class>controller.HomeServlet</servlet-class>
@@ -151,7 +151,7 @@
   </servlet>
   <servlet-mapping>
   	<servlet-name>InsertEvent</servlet-name>
-  	<url-pattern>/insert</url-pattern>
+  	<url-pattern>/insertEvent</url-pattern>
   </servlet-mapping>
   
   <servlet>
@@ -193,7 +193,7 @@
   
 
   
-  
+   <!-- Equipment -->
   
       <servlet>
     	<servlet-name>insertEquipment</servlet-name>
@@ -203,7 +203,37 @@
     	<servlet-name>insertEquipment</servlet-name>
     	<url-pattern>/addEq</url-pattern>
     </servlet-mapping>
-
+	 <!-- Progress -->
+	 	<servlet>
+         	<servlet-name>EvaluationPage</servlet-name>
+         	<servlet-class>controller.EvaluationPageServlet</servlet-class>
+         </servlet>
+         
+         <servlet-mapping>
+         	<servlet-name>EvaluationPage</servlet-name>
+         	<url-pattern>/EvaluationPage</url-pattern>
+         </servlet-mapping>
+       <!-- EvaluationDetailsPage -->
+         <servlet>
+         	<servlet-name>EvaluationDetailsPage</servlet-name>
+         	<servlet-class>controller.EvaluationDetailsPageServelet</servlet-class>
+         </servlet>
+         
+         <servlet-mapping>
+         	<servlet-name>EvaluationDetailsPage</servlet-name>
+         	<url-pattern>/EvaluationDetailsPage</url-pattern>
+         </servlet-mapping>
+       <!-- addScore Page -->
+         <servlet>
+         	<servlet-name>AddScorePage</servlet-name>
+         	<servlet-class>controller.SendScoreDetailsServlet</servlet-class>
+         </servlet>
+         
+         <servlet-mapping>
+         	<servlet-name>AddScorePage</servlet-name>
+         	<url-pattern>/AddScorePage</url-pattern>
+         </servlet-mapping>
+	 
   	<!-- Add new Score -->
          <servlet>
          	<servlet-name>AddNewSco</servlet-name>
