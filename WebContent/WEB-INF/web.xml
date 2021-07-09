@@ -351,6 +351,36 @@
 		<url-pattern>/deleteComp</url-pattern>
 	</servlet-mapping>
 	
+	<!-- Add new Preparation -->
+         <servlet>
+         	<servlet-name>InsertPreparation</servlet-name>
+         	<servlet-class>controller.InsertPreparationServelet</servlet-class> 
+         </servlet>
+         
+         <servlet-mapping>
+         	<servlet-name>InsertPreparation</servlet-name>
+         	<url-pattern>/InsertPreparation</url-pattern>
+         </servlet-mapping>
+   <!-- Update Preparation -->
+         <servlet>
+         	<servlet-name>UpdatePreparation</servlet-name>
+         	<servlet-class>controller.UpdatePreparationServlet</servlet-class> 
+         </servlet>
+         
+         <servlet-mapping>
+         	<servlet-name>UpdatePreparation</servlet-name>
+         	<url-pattern>/UpdatePreparation</url-pattern>
+         </servlet-mapping>
+      <!-- Delete Preparation -->
+         <servlet>
+         	<servlet-name>DeletePreparation</servlet-name>
+         	<servlet-class>controller.DeletePreparationServelet</servlet-class> 
+         </servlet>
+         
+         <servlet-mapping>
+         	<servlet-name>DeletePreparation</servlet-name>
+         	<url-pattern>/DeletePreparation</url-pattern>
+         </servlet-mapping>
 	
 		<!-- Add new Schedule -->
          <servlet>
@@ -394,6 +424,17 @@
          <servlet-mapping>
          	<servlet-name>DeleteScheduleServlet</servlet-name>
          	<url-pattern>/delete</url-pattern>
+         </servlet-mapping>  
+         
+       <!-- FIND ATHLETE SCHEDULE -->
+        <servlet>
+         	<servlet-name>FindSchedule</servlet-name>
+         	<servlet-class>controller.FindscheduleServelet</servlet-class> 
+         </servlet>
+         
+         <servlet-mapping>
+         	<servlet-name>FindSchedule</servlet-name>
+         	<url-pattern>/FindSchedule</url-pattern>
          </servlet-mapping>  
          
           <!-- financeInsert -->
