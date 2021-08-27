@@ -17,9 +17,7 @@ pageEncoding="ISO-8859-1"%>
 	<body>
 		<jsp:include page="/ProgressCommonLayout.jsp"></jsp:include>
 		<div class ="main">
-<<<<<<< Upstream, based on origin/shalitha-alahakoon
-		    
-=======
+
 	<!-- view Score 
 >>>>>>> b0daab2 Eavaluation page added to TRAINING PROGRESS MANAGEMENT changed inter face
 			<h1>Add / Search Score Details</h1><br><br>

@@ -78,6 +78,7 @@
 	<!-- Side navigation -->
 	<div class="sidenav">
 	  <a href="Create_TS.jsp">CREATE NEW TRAINING SCHEDULE</a>
+	  <a href="Preaparations.jsp">ADD NEW PREPARATION</a>
 	  <a href="ValidateAthlete.jsp">VIEW TRAINING SCHEDULE</a>
 	  <a href="ValidateAthlete.jsp">UPDATE/DELETE SCHEDULE</a>
 	  <a href="Genarate_report.jsp">GENERATE REPORT</a>
